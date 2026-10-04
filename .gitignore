@@ -1,0 +1,19 @@
+# build
+build
+
+# IDE
+.cache
+
+# VSCode
+.vscode
+*.code-workspace
+
+# Emacs
+*~
+
+# Kernel files
+*.elf
+*.efi
+*.iso
+*.img
+*.bin
