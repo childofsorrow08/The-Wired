@@ -1,0 +1,18 @@
+# Project languages
+*.c                             linguist-language=C
+*.cpp                           linguist-language=C++
+*.asm                           linguist-language=Assembly
+
+# Project configurations and scripts
+*.cmake                         linguist-language=CMake
+
+# I don't want this in project statistic
+*.html                          linguist-vendored
+*.css                           linguist-vendored
+*.nix                           linguist-vendored
+*.sh                            linguist-vendored
+*.js                            linguist-vendored
+
+**/resources/**                 linguist-vendored
+
+# Third-party code
