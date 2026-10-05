@@ -34,7 +34,7 @@ jobs:
       - name: Install cross-compilers
         run: |
           mkdir -p $HOME/i686-elf-tools
-          curl -L -o tools.tar.gz https://github.com/lordmilko/i686-elf-tools/releases/latest/download/i686-elf-tools-linux.zip
+          curl -L -o tools.zip https://github.com/lordmilko/i686-elf-tools/releases/latest/download/i686-elf-tools-linux.zip
           unzip tools.zip -d $HOME/i686-elf-tools
           echo "$HOME/i686-elf-tools/bin" >> $GITHUB_PATH
 
