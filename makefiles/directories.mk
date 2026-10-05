@@ -17,3 +17,6 @@ X32_ELF := $(X32_BIN_DIR)/wired.elf
 
 LD_SCRIPT := $(MAKECFG_DIR)/linker/linker.ld
 GRUB_CFG := $(MAKECFG_DIR)/grub/grub.cfg
+
+# Used only for GitHub Actions
+WEBKERNEL_DIR := $(ROOT_DIR)/web/kernel
