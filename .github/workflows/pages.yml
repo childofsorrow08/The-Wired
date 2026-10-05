@@ -2,6 +2,7 @@ name: Deploy kernel to GitHub Pages
 
 on:
   pull_request:
+    types: [closed]
     branches: ["the-wired"]
   workflow_dispatch:
 
@@ -12,6 +13,8 @@ permissions:
 
 jobs:
   deploy:
+    if: github.event_name == 'workflow_dispatch' || (github.event.pull_request.merged == true && !startsWith(github.event.pull_request.head.ref, 'docs/'))
+
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
