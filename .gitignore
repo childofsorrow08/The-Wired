@@ -11,6 +11,9 @@ build
 # Emacs
 *~
 
+# local stuff
+qemu.log
+
 # Kernel files
 *.elf
 *.efi

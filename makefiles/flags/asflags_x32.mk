@@ -1,0 +1,1 @@
+ASFLAGS_32 := $(ASFLAGS) --32

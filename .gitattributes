@@ -1,10 +1,13 @@
 # Project languages
 *.c                             linguist-language=C
 *.cpp                           linguist-language=C++
+*.s                           	linguist-language=Assembly
+*.S                           	linguist-language=Assembly
 *.asm                           linguist-language=Assembly
 
 # Project configurations and scripts
 *.cmake                         linguist-language=CMake
+*.mk                            linguist-language=Makefile
 
 # I don't want this in project statistic
 *.html                          linguist-vendored

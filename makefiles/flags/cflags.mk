@@ -1,0 +1,12 @@
+CFLAGS := \
+    -ffreestanding \
+    -nostdlib \
+    -fno-builtin \
+    -fno-exceptions \
+    -fno-stack-protector \
+    -fno-pie \
+    -fno-pic \
+    -Wall \
+    -Wextra \
+    -Werror \
+    -O2
