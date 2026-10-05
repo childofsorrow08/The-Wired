@@ -16,4 +16,4 @@ include $(MAKECFG_DIR)/prerequisites.mk
 include $(MAKECFG_DIR)/targets.mk
 
 # Ignore this, only needed for GitHub Actions
-include $(MAKECFG_DIR)/.github/pages.mk
+include $(SRC_DIR)/.github/pages.mk
