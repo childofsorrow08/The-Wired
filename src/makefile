@@ -17,3 +17,4 @@ include $(MAKECFG_DIR)/targets.mk
 
 # Ignore this, only needed for GitHub Actions
 include $(ROOT_DIR)/.github/pages.mk
+include $(ROOT_DIR)/.github/release.mk
