@@ -20,3 +20,4 @@ GRUB_CFG := $(MAKECFG_DIR)/grub/grub.cfg
 
 # Used only for GitHub Actions
 WEBKERNEL_DIR := $(ROOT_DIR)/web/kernel
+RELEASE_BIN_DIR := $(BUILD_DIR)/release
