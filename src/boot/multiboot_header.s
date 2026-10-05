@@ -1,0 +1,18 @@
+.code32
+
+.section .multiboot_header, "a", @progbits
+.set MULTIBOOT2_HEADER_MAGIC,   0xE85250D6
+.set MULTIBOOT2_ARCHITECTURE_X86, 0
+.set MULTIBOOT2_HEADER_LENGTH,  (header_end - header_start)
+.set MULTIBOOT2_CHECKSUM,       -(MULTIBOOT2_HEADER_MAGIC + MULTIBOOT2_ARCHITECTURE_X86 + MULTIBOOT2_HEADER_LENGTH)
+
+header_start:
+    .long MULTIBOOT2_HEADER_MAGIC
+    .long MULTIBOOT2_ARCHITECTURE_X86
+    .long MULTIBOOT2_HEADER_LENGTH
+    .long MULTIBOOT2_CHECKSUM
+
+    .word 0
+    .word 0
+    .long 8
+header_end:
