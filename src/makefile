@@ -14,6 +14,7 @@ include $(MAKECFG_DIR)/flags.mk
 include $(MAKECFG_DIR)/rules.mk
 include $(MAKECFG_DIR)/prerequisites.mk
 include $(MAKECFG_DIR)/targets.mk
+all: x32 iso32
 
 # Ignore this, only needed for GitHub Actions
 include $(ROOT_DIR)/.github/pages.mk
