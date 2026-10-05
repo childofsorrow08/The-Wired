@@ -1,0 +1,75 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+	<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="0">
+
+    <title>TheWired kernel</title>
+    <style>
+        html, body {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            height: 100%;
+            background-color: #000;
+            overflow: hidden;
+            font-family: sans-serif;
+            color: #fff;
+        }
+        #screen_container {
+            width: 100vw;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: #000;
+        }
+        #screen_container > div {
+            width: 100% !important;
+            height: 100% !important;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        #screen_container canvas {
+            max-width: 100% !important;
+            max-height: 100% !important;
+            width: auto !important;
+            height: auto !important;
+            object-fit: contain !important;
+        }
+    </style>
+</head>
+<body>
+    <div id="screen_container">
+        <div></div>
+    </div>
+
+    <script src="v86/libv86.js"></script>
+    <script>
+    "use strict";
+
+    window.onload = function() {
+        var config = {
+            wasm_path: "v86/v86.wasm",
+            memory_size: 128 * 1024 * 1024,
+            vga_memory_size: 8 * 1024 * 1024,
+            screen_container: document.getElementById("screen_container").querySelector("div"),
+            bios: {
+                url: "bios/seabios.bin",
+            },
+            vga_bios: {
+                url: "bios/vgabios.bin",
+            },
+            autostart: true,
+            cdrom: { url: "kernel/wired.iso" },
+            boot_order: 0x123,
+        };
+
+        var emulator = new V86(config);
+    };
+    </script>
+</body>
+</html>

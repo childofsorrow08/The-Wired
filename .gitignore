@@ -15,8 +15,8 @@ build
 qemu.log
 
 # Kernel files
-*.elf
-*.efi
-*.iso
-*.img
-*.bin
+wired.elf
+wired.efi
+wired.iso
+wired.img
+wired.bin
