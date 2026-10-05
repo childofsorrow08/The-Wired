@@ -3,7 +3,7 @@ name: Create release
 on:
   pull_request:
     types: [closed]
-    branches: [ "brighter-than-every-star" ]
+    branches: [ "the-wired" ]
   workflow_dispatch:
 
 jobs:
