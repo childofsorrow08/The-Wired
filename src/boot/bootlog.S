@@ -7,16 +7,16 @@ build_time_label:
 
 #ifdef X32
 cc32_label:
-    .asciz "CC32: "
+    .asciz "C Compiler: "
 as32_label:
-    .asciz "AS32: "
+    .asciz "Assembly: "
 #endif
 
 #ifdef X64
 cc64_label:
-    .asciz "CC64: "
+    .asciz "C Compiler: "
 as64_label:
-    .asciz "AS64: "
+    .asciz "Assembly: "
 #endif
 
 arch_label:
