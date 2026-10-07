@@ -13,6 +13,7 @@ _start32:
     cli
 
 	movl $0xB8000, %edi
+	call clear_screen
 	call welcome_msg
 
 #if defined(X32)
