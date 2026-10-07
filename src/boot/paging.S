@@ -1,6 +1,6 @@
 .section .boot
 	.global paging_init
-
+	.extern table_768
 
 # maps 4 mb in 4 kb pages
 # I think that's enough to get the base kernel up and running
@@ -23,10 +23,5 @@ paging_init:
 	movl $table_768, %eax
 	movl %eax, %cr3
 	ret
-
-.section .bss
-	.align 4096
-	table_768:
-		.skip 4096
 #endif
 
