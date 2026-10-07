@@ -26,8 +26,8 @@ newline_str:
     .asciz "\n"
 
 
-.section .text
-.global welcome_msg
+.section .boot
+	.global welcome_msg
 
 welcome_msg:
     movl $welcome_message, %esi
