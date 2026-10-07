@@ -5,6 +5,7 @@
 
 	.extern welcome_msg
 	.extern stack_top
+	.extern paging_init
 
 	.extern _main
 
@@ -16,6 +17,8 @@ _start32:
 
 #if defined(X32)
 	movl $stack_top, %esp
+
+	call paging_init
 #elif defined(X64)
 	movq $stack_top, %rsp
 #endif
