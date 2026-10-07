@@ -1,4 +1,5 @@
 LDFLAGS := \
     -nostdlib \
     -ffreestanding \
-    -static
+    -static \
+    -T $(LD_SCRIPT)
