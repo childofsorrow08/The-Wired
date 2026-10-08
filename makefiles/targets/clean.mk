@@ -12,6 +12,11 @@ cleanbin:
 	@rm -rf $(X64_BIN_DIR)
 	@echo "[INFO] Binary dirs cleared"
 
+cleanlocalt:
+	@rm -rf $(I686-TOOLS-DIR)
+	@rm -rf $(X86_64-TOOLS-DIR)
+	@echo "[INFO] Local cross-dev tools cleared"
+
 cleanall:
 	@rm -rf $(BUILD_DIR)
 	@echo "[INFO] Build dir cleared"
