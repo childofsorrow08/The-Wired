@@ -9,15 +9,15 @@ However, for those who will be working on this project with me, the rules that m
 
 ## 1. Git branches
 1) All branches must have a prefix:
-- `dev/` - A branch for working on the code. Anything goes—adding new features, refactoring, fixing bugs—it’s all in this branch. A successful pull request from here triggers both GitHub Actions.
-- `docs/` - A branch for updating documentation. If a pull request to the main branch is successful, it will not trigger GitHub Actions. `.gitignore`, `.gitattributes` and `shell.nix` are also updated in this category.
-- `web/` - A branch for updating the project's website, where you can test the kernel. A successful pull request to the main branch from this branch triggers a GitHub Action designed to update the website.
-- `ci/` - A branch for changes in GitHub Actions. When successfully merged into the main branch, it triggers all GitHub Actions.
+	- `dev/` - A branch for working on the code. Anything goes—adding new features, refactoring, fixing bugs—it’s all in this branch. A successful pull request from here triggers both GitHub Actions.
+	- `docs/` - A branch for updating documentation. If a pull request to the main branch is successful, it will not trigger GitHub Actions. `.gitignore`, `.gitattributes` and `shell.nix` and other such files are also updated in this category.
+	- `web/` - A branch for updating the project's website, where you can test the kernel. A successful pull request to the main branch from this branch triggers a GitHub Action designed to update the website.
+	- `ci/` - A branch for changes in GitHub Actions. When successfully merged into the main branch, it triggers all GitHub Actions.
 
 2) The branch name should include a brief description of what is being done in it. For example, `dev/refactoring`.
 
 3) `the-wired` - main branch, and the `!dev/artificial-suicide` - dev branch.
-> Note: `!dev` prefix to ensure that the branch is always second on the list of branches on GitHub and stands out from the other `dev` branches. You can ignore the name.
+	> Note: `!dev` prefix to ensure that the branch is always second on the list of branches on GitHub and stands out from the other `dev` branches. You can ignore the name.
 
 4) `the-wired` should always contain only stable versions, `!dev/artificial-suicide` contains the latest code.
 
