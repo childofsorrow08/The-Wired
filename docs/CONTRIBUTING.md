@@ -16,6 +16,13 @@ However, for those who will be working on this project with me, the rules that m
 
 2) The branch name should include a brief description of what is being done in it. For example, `dev/refactoring`.
 
+3) `the-wired` - main branch, and the `!dev/artificial-suicide` - dev branch.
+> Note: `!dev` prefix to ensure that the branch is always second on the list of branches on GitHub and stands out from the other `dev` branches. You can ignore the name.
+
+4) `the-wired` should always contain only stable versions, `!dev/artificial-suicide` contains the latest code.
+
+5) No direct commits to `the-wired` or `!dev/artificial-suicide`. Only pull requests from other branches to `!dev/artificial-suicide`, and later, once a stable version is reached, a pull request from `!dev/artificial-suicide` to `the-wired`.
+
 ## 2. Git commits
 1) All commits must begin with an appropriate emoji from [this site](https://gitmoji.dev/). This serves no specific purpose, but it provides a slightly better understanding of what the commit does and makes the commit history more visually appealing.
 
