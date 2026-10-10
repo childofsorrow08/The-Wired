@@ -3,6 +3,8 @@ C_SOURCES := 									\
 	$(SRC_DIR)/variables.c 						\
 												\
 	$(SRC_DIR)/drivers/framebuffer/init.c		\
+	$(SRC_DIR)/drivers/framebuffer/char.c		\
+	$(SRC_DIR)/drivers/framebuffer/string.c		\
 												\
 	$(SRC_DIR)/helpers/font.c
 
