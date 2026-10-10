@@ -15,6 +15,7 @@ build
 deprecated
 hidden
 qemu.log
+serial.log
 
 # Kernel files
 wired.elf
