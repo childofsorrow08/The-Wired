@@ -12,6 +12,8 @@ build
 *~
 
 # local stuff
+deprecated
+hidden
 qemu.log
 
 # Kernel files
