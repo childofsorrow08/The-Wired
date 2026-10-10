@@ -9,6 +9,8 @@
 
 	.extern welcome_msg
 	.extern paging_init
+	.extern gdt_init
+	.extern idt_init
 	.extern _main
 
 _start32:
@@ -23,9 +25,9 @@ _start32:
 	// Multiboot info
     movl %ebx, multiboot_info_ptr
 
-#if defined(X32)
+	call gdt_init
+	call idt_init
 	call paging_init
-#endif
 
 	call _main
 
