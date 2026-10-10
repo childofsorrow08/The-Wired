@@ -6,7 +6,10 @@ CFLAGS := \
     -fno-stack-protector \
     -fno-pie \
     -fno-pic \
+	-fshort-wchar \
     -Wall \
     -Wextra \
-    -Werror \
-    -O2
+    -O2		\
+	-I$(SRC_DIR)/include
+
+# -Werror \

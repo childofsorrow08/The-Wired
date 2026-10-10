@@ -7,6 +7,7 @@ SECTIONS
     .start : {
 		*(.multiboot_header)
 		*(.start)
+		*(.boot)
 	}
 
     .text : { *(.text) }

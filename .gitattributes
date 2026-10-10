@@ -1,21 +1,20 @@
 # Project languages
-*.c                             linguist-language=C
-*.cpp                           linguist-language=C++
-*.s                           	linguist-language=Assembly
-*.S                           	linguist-language=Assembly
-*.asm                           linguist-language=Assembly
+*.c								linguist-language=C
+*.cpp							linguist-language=C++
+*.s								linguist-language=Assembly
+*.S								linguist-language=Assembly
+*.asm							linguist-language=Assembly
 
 # Project configurations and scripts
-*.cmake                         linguist-language=CMake
-*.mk                            linguist-language=Makefile
+*.cmake							linguist-language=CMake
+*.mk							linguist-language=Makefile
 
 # I don't want this in project statistic
-*.html                          linguist-vendored
-*.css                           linguist-vendored
-*.nix                           linguist-vendored
-*.sh                            linguist-vendored
-*.js                            linguist-vendored
+*.html							linguist-vendored
+*.css							linguist-vendored
+*.nix							linguist-vendored
+*.sh							linguist-vendored
+*.js							linguist-vendored
 
-**/resources/**                 linguist-vendored
-
-# Third-party code
+**/resources/**					linguist-vendored
+**/third-party/**				linguist-vendored

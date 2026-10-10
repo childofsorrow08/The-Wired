@@ -7,6 +7,23 @@ A monolithic kernel that will contain everything necessary for a minimal operati
 # How to build:
 > Note: If you want to test this kernel, you can do this online [here](https://childofsorrow08.github.io/The-Wired/)!
 
+## Dependencies:
+
+### Default dependencies:
+- GCC and AS compilers
+- Makefiles
+> Note: Standard compilers will usually work, but it is recommended that you install cross-compilers. If, for some reason, you are unable to do so using your package manager, you can use the scripts located in the `scripts` directory at the root of the project
+
+### ISO image dependencies:
+- Grub
+- Xorriso
+
+### Testing dependencies:
+- QEMU
+> Note: If you want to use `runiso32` target to test kernel, you also need ISO image dependencies
+
+## Build process:
+
 1) Clone the repository and navigate to the project directory:
 ```bash
 git clone https://github.com/childofsorrow08/The-Wired
