@@ -36,40 +36,5 @@ void framebuffer_init(void) {
 }
 
 
-// test functions
-// will be deleted or rewritten
-void draw_cube(void) {
-    uint32_t *fb_ptr = fb.base;
 
-    for (uint32_t y = 0; y < fb.height; y++) {
-        for (uint32_t x = 0; x < fb.width; x++) {
-            fb_ptr[y * fb.pitch_pixels + x] = 0x00FF0000;
-        }
-    }
-}
 
-void draw_char(int x, int y, char c, uint32_t color) {
-    const uint8_t* glyph = get_font_glyph(c);
-
-    for (int row = 0; row < 16; row++) {
-        uint8_t line_bits = glyph[row];
-        for (int col = 0; col < 8; col++) {
-            if (line_bits & (1 << (7 - col))) {
-                int px = x + col;
-                int py = y + row;
-                if (px < fb.width && py < fb.height) {
-                    fb.base[py * fb.pitch_pixels + px] = color;
-                }
-            }
-        }
-    }
-}
-
-void draw_string(int x, int y, const char* str, uint32_t color) {
-    int cursor_x = x;
-    while (*str) {
-        draw_char(cursor_x, y, *str, color);
-        cursor_x += 8;
-        str++;
-    }
-}
