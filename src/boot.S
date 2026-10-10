@@ -23,10 +23,6 @@ _start32:
 	// Multiboot info
     movl %ebx, multiboot_info_ptr
 
-	// movl $0xB8000, %edi
-	// call clear_screen
-	// call welcome_msg
-
 #if defined(X32)
 	call paging_init
 #endif
