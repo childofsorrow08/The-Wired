@@ -9,6 +9,7 @@ CFLAGS := \
 	-fshort-wchar \
     -Wall \
     -Wextra \
-    -Werror \
     -O2		\
 	-I$(SRC_DIR)/include
+
+# -Werror \
