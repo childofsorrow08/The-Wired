@@ -6,5 +6,8 @@ C_SOURCES := 									\
 	$(SRC_DIR)/drivers/framebuffer/char.c		\
 	$(SRC_DIR)/drivers/framebuffer/string.c		\
 												\
-	$(SRC_DIR)/helpers/font.c
-
+	$(SRC_DIR)/tty/print.c						\
+	$(SRC_DIR)/tty/tty.c						\
+												\
+	$(SRC_DIR)/helpers/font.c					\
+	$(SRC_DIR)/helpers/int_str.c
