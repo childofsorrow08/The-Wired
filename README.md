@@ -12,7 +12,7 @@ A monolithic kernel that will contain everything necessary for a minimal operati
 ### Default dependencies:
 - GCC and AS compilers
 - Makefiles
-> Note: Standard compilers will usually work, but it is recommended that you install cross-compilers. If, for some reason, you are unable to do so using your package manager, you can use the scripts located in the `scripts` directory at the root of the project
+> Note: Please, use [cross-compilers](docs/BUILDING.md#4-cross-development-tools).
 
 ### ISO image dependencies:
 - Grub
@@ -24,23 +24,17 @@ A monolithic kernel that will contain everything necessary for a minimal operati
 
 ## Build process:
 
-1) Clone the repository and navigate to the project directory:
 ```bash
 git clone https://github.com/childofsorrow08/The-Wired
-cd The-Wired
-```
-
-2. Run Make:
-```bash
-cd src
+cd The-Wired/src
 make build ARCH=*
 ```
 
-> Note: Instead of * specify arch you want. For example, ARCH=X32 or ARCH=X64
+> Note: Instead of * specify arch you want. For example, ARCH=X32 or ARCH=X64. Also you can see full list of compile options [here](docs/BUILDING.md#2-build-options).
 
 > Note: Instead of `build`, you can specify another target you need. You can see all targets [here](docs/BUILDING.md#1-makefile-targets).
 
-> Note: Also, if you're using NixOS or Nix package manager, [you can use the script to build in the nix-shell](docs/BUILDING.md#2-nix-package-manager).
+> Note: Also, if you're using NixOS or Nix package manager, [you can use the script to build in the nix-shell](docs/BUILDING.md#3-nix-package-manager).
 
 # Docs:
 
