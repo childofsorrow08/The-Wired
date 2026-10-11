@@ -3,14 +3,16 @@
 
 #include <framebuffer.h>
 #include <variables.h>
-
-// test function
-// will be deleted
-extern void draw_cube(void);
+#include <tty.h>
 
 void _main(void) {
 	framebuffer_init();
-	draw_cube();
+
+	int i = 30;
+	char* str = "Welcome to TheWired kernel btw \nI should work on my naming";
+	printmsg("Some text for test, also random int: %d \n", i);
+	printmsg("%s", str);
+	printmsg("\nAlmost forgot to test this: %%");
 
 	while (1) {
 		__asm__ volatile("hlt");

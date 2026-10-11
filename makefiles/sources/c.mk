@@ -1,6 +1,13 @@
-C_SOURCES := \
-	$(SRC_DIR)/kernel.c \
-	$(SRC_DIR)/variables.c \
-						\
-	$(SRC_DIR)/drivers/framebuffer/init.c
-
+C_SOURCES := 									\
+	$(SRC_DIR)/kernel.c 						\
+	$(SRC_DIR)/globals.c 						\
+												\
+	$(SRC_DIR)/drivers/framebuffer/init.c		\
+	$(SRC_DIR)/drivers/framebuffer/char.c		\
+	$(SRC_DIR)/drivers/framebuffer/string.c		\
+												\
+	$(SRC_DIR)/tty/print.c						\
+	$(SRC_DIR)/tty/tty.c						\
+												\
+	$(SRC_DIR)/helpers/font.c					\
+	$(SRC_DIR)/helpers/int_str.c
