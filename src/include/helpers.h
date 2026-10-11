@@ -2,5 +2,6 @@
 #define HELPERS_H
 
 const unsigned char *get_font_glyph(char c);
+char *int_to_string(int value);
 
 #endif
