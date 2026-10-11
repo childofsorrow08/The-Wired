@@ -3,6 +3,7 @@
 #include <multiboot.h>
 #include <framebuffer.h>
 #include <variables.h>
+#include <helpers.h>
 
 void framebuffer_init(void) {
     uint8_t *info = (uint8_t *)(uintptr_t)multiboot_info_ptr;
@@ -35,14 +36,5 @@ void framebuffer_init(void) {
 }
 
 
-// test function
-// will be deleted
-void draw_cube(void) {
-    uint32_t *fb_ptr = fb.base;
 
-    for (uint32_t y = 0; y < fb.height; y++) {
-        for (uint32_t x = 0; x < fb.width; x++) {
-            fb_ptr[y * fb.pitch_pixels + x] = 0x00FF0000;
-        }
-    }
-}
+
