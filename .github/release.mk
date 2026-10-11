@@ -1,4 +1,12 @@
-release: all
+release:
+	@echo "[INFO] Building X32 release..."
+	@$(MAKE) cleanall
+	@$(MAKE) ARCH=X32 all
+
+#    @echo "[INFO] Building X64 release..."
+#    $(MAKE) clean
+#    $(MAKE) ARCH=X64 all
+
 	@echo "[INFO] Copying binaries for release"
 	@mkdir -p $(RELEASE_BIN_DIR)
 
