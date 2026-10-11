@@ -1,4 +1,6 @@
-runiso32: iso32
+ifeq ($(ARCH),X32)
+
+runiso: iso
 	@rm -f $(ROOT_DIR)/qemu.log
 
 	@qemu-system-x86_64                         \
@@ -10,3 +12,4 @@ runiso32: iso32
 		-rtc base=localtime                     \
 		-d int,cpu_reset                        \
 		-D $(ROOT_DIR)/qemu.log
+endif

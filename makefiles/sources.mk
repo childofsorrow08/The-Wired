@@ -1,24 +1,20 @@
-include $(MAKECFG_DIR)/sources/c.mk
-include $(MAKECFG_DIR)/sources/S.mk
-include $(MAKECFG_DIR)/sources/asm.mk
+C_SOURCES   := $(shell find $(SRC_DIR) -name "*.c")
+S_SOURCES   := $(shell find $(SRC_DIR) -name "*.S")
+ASM_SOURCES := $(shell find $(SRC_DIR) -name "*.s")
 
-X32_C_SOURCES := 			\
-	$(C_SOURCES)			\
-	$(S_SOURCES)
+ifeq ($(ARCH),X32)
+C_OBJ_FILES	:= $(patsubst $(SRC_DIR)/%.c, $(X32_OBJ_DIR)/%.o, $(C_SOURCES))
+S_OBJ_FILES	:= $(patsubst $(SRC_DIR)/%.S, $(X32_OBJ_DIR)/%.o, $(S_SOURCES))
+ASM_OBJ_FILES := $(patsubst $(SRC_DIR)/%.s, $(X32_OBJ_DIR)/%.o, $(ASM_SOURCES))
+endif
 
-X32_ASM_SOURCES := 			\
-	$(ASM_SOURCES)
+ifeq ($(ARCH),X64)
+C_OBJ_FILES	:= $(patsubst $(SRC_DIR)/%.c, $(X64_OBJ_DIR)/%.o, $(C_SOURCES))
+S_OBJ_FILES	:= $(patsubst $(SRC_DIR)/%.S, $(X64_OBJ_DIR)/%.o, $(S_SOURCES))
+ASM_OBJ_FILES := $(patsubst $(SRC_DIR)/%.s, $(X64_OBJ_DIR)/%.o, $(ASM_SOURCES))
+endif
 
-X32_SOURCES := 				\
-	$(X32_C_SOURCES) 		\
-	$(X32_ASM_SOURCES)
-
-# I should have found another place for this, but still
-X32_C_OBJ_FILES	:= $(patsubst $(SRC_DIR)/%.c, $(X32_OBJ_DIR)/%.o, $(C_SOURCES))
-X32_S_OBJ_FILES	:= $(patsubst $(SRC_DIR)/%.S, $(X32_OBJ_DIR)/%.o, $(S_SOURCES))
-X32_ASM_OBJ_FILES := $(patsubst $(SRC_DIR)/%.s, $(X32_OBJ_DIR)/%.o, $(ASM_SOURCES))
-
-X32_OBJS := \
-    $(X32_C_OBJ_FILES) \
-    $(X32_S_OBJ_FILES) \
-    $(X32_ASM_OBJ_FILES)
+OBJS := \
+    $(C_OBJ_FILES) \
+    $(S_OBJ_FILES) \
+    $(ASM_OBJ_FILES)

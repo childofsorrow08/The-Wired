@@ -1,6 +1,5 @@
-iso32: $(X32_ELF)
-
-iso32:
+ifeq ($(ARCH),X32)
+iso: $(X32_ELF)
 	@echo "[INFO] Building x32 ISO image"
 	@mkdir -p $(X32_ISO_DIR)/boot/grub
 	@mkdir -p $(X32_BIN_DIR)
@@ -10,3 +9,4 @@ iso32:
 
 	@grub-mkrescue -o $(X32_ISO_IMG) $(X32_ISO_DIR) 2>/dev/null
 	@echo "[INFO] ISO created at: $(X32_ISO_IMG)"
+endif
