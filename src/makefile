@@ -8,11 +8,13 @@
 
 SRC_DIR := $(patsubst %/,%,$(dir $(abspath $(lastword $(MAKEFILE_LIST)))))
 include $(SRC_DIR)/../makefiles/directories.mk
+include $(MAKECFG_DIR)/prerequisites.mk
+
 include $(MAKECFG_DIR)/sources.mk
 include $(MAKECFG_DIR)/toolchain.mk
 include $(MAKECFG_DIR)/flags.mk
 include $(MAKECFG_DIR)/rules.mk
-include $(MAKECFG_DIR)/prerequisites.mk
+include $(MAKECFG_DIR)/build_info.mk
 include $(MAKECFG_DIR)/targets.mk
 all: x32 iso32
 
