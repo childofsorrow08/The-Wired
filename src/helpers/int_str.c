@@ -1,4 +1,4 @@
-char *int_to_string(int value) {
+char *int_to_str(int value) {
     static char buffer[12];
     int i = 0;
     int negative = value < 0;
