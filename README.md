@@ -20,7 +20,7 @@ A monolithic kernel that will contain everything necessary for a minimal operati
 
 ### Testing dependencies:
 - QEMU
-> Note: If you want to use `runiso32` target to test kernel, you also need ISO image dependencies
+> Note: If you want to use `runiso` target to test kernel, you also need ISO image dependencies
 
 ## Build process:
 
@@ -33,10 +33,12 @@ cd The-Wired
 2. Run Make:
 ```bash
 cd src
-make all
+make build ARCH=*
 ```
 
-> Note: Instead of `all`, you can specify the target you need. You can see all targets [here](docs/BUILDING.md#1-makefile-targets).
+> Note: Instead of * specify arch you want. For example, ARCH=X32 or ARCH=X64
+
+> Note: Instead of `build`, you can specify another target you need. You can see all targets [here](docs/BUILDING.md#1-makefile-targets).
 
 > Note: Also, if you're using NixOS or Nix package manager, [you can use the script to build in the nix-shell](docs/BUILDING.md#2-nix-package-manager).
 
