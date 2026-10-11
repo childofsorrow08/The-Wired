@@ -33,4 +33,6 @@ However, for those who will be working on this project with me, the rules that m
 ## 3. Code rules
 1) The use of AI is permitted to create a quick prototype of a particular feature - for example, to try to figure out how something works - but its final version must always be written manually by a programmer.
 
-2) For now, there won't be many code-related rules, since I'm the only developer at the moment
+2) If file used only for X64 arch, you need to put `#if defined(X64)` on the start of the file, and `#endif` in the end. Previously, I specified source files manually, now they are searched for automatically - it's impossible to specify which ones should be compiled and which ones shouldn't, so the easiest way to avoid problems is to use preprocessor directives.
+
+3) For now, there won't be many code-related rules, since I'm the only developer at the moment, and I'm not really sure what specific rules I want to see here
