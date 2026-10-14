@@ -8,11 +8,23 @@
 void _main(void) {
 	framebuffer_init();
 
-	int i = 30;
-	char* str = "Welcome to TheWired kernel btw \nI should work on my naming";
-	printmsg("Some text for test, also random int: %d \n", i);
-	printmsg("%s", str);
-	printmsg("\nAlmost forgot to test this: %%");
+#if defined(BUILD_TIME) || defined (CC_VERSION) || defined (AS_VERSION) || defined(ARCH)
+
+	/*
+	 * Just prints build metadata
+	 * #if defined because i can delete this later,
+	 * and forget about it
+	 */
+
+	printmsg(" -----------------------------------\n");
+	printmsg(" --- Welcome to TheWired kernel! ---\n");
+	printmsg(" -----------------------------------\n");
+	printmsg(" Build date: %s                     \n", BUILD_TIME);
+	printmsg(" C compiler version: %s             \n", CC_VERSION);
+	printmsg(" Assembler version: %s              \n", AS_VERSION);
+	printmsg(" Arch: %s                           \n", ARCH);
+	printmsg(" -----------------------------------\n");
+#endif
 
 	while (1) {
 		__asm__ volatile("hlt");
