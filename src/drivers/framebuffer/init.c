@@ -15,9 +15,7 @@ void framebuffer_init(void) {
         struct multiboot_tag *tag =
             (struct multiboot_tag *)(info + offset);
 
-        if (tag->type == 0) {
-            break;
-        }
+        if (tag->type == 0) { break; }
 
         if (tag->type == 8) {
             struct multiboot_tag_framebuffer *fb_tag =
