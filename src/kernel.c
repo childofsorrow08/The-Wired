@@ -9,9 +9,9 @@ void _main(void) {
     framebuffer_init();
     keyboard_init();
 
-	#if defined(BUILD_TIME) ||\
-		defined(CC_VERSION) ||\
-		defined(AS_VERSION) ||\
+	#if defined(BUILD_TIME) || \
+		defined(CC_VERSION) || \
+		defined(AS_VERSION) || \
 		defined(ARCH)
 
 		/*
