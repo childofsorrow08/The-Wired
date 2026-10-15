@@ -7,7 +7,6 @@
 
 void _main(void) {
     framebuffer_init();
-
     keyboard_init();
 
 	#if defined(BUILD_TIME) ||\
@@ -30,7 +29,6 @@ void _main(void) {
     	printmsg(" Arch: %s                           \n", ARCH);
     	printmsg(" -----------------------------------\n");
 	#endif
-
 
     printmsg("Keyboard test:\n");
     printmsg("> ");
