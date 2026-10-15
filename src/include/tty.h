@@ -2,7 +2,7 @@
 #define TTY_H
 
 /*
- * printf() implementation, but printmsg():
+ * printf() implementation, but tty_print():
  *
  * - Takes any number of arguments and replaces %*
  * with the corresponding output
@@ -14,6 +14,6 @@
  * %c - char
  * %% - %
  */
-extern void printmsg(char *msg, ...);
+extern void tty_print(char *msg, ...);
 extern void tty_input(char c);
 #endif

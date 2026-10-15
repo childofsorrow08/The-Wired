@@ -1,11 +1,12 @@
 #include <stdint.h>
 #include <stdarg.h>
 
-#include <tty.h>
 #include <helpers.h>
 #include <framebuffer.h>
+#include <helpers/colors.h>
+#include <private/tty.h>
 
-void printmsg(char *msg, ...) {
+void tty_print(char *msg, ...) {
     va_list args;
     va_start(args, msg);
 

@@ -20,18 +20,18 @@ void _main(void) {
 		 * and forget about it
 		 */
 
-    	printmsg(" -----------------------------------\n");
-    	printmsg(" --- Welcome to TheWired kernel! ---\n");
-    	printmsg(" -----------------------------------\n");
-    	printmsg(" Build date: %s                     \n", BUILD_TIME);
-    	printmsg(" C compiler version: %s             \n", CC_VERSION);
-    	printmsg(" Assembler version: %s              \n", AS_VERSION);
-    	printmsg(" Arch: %s                           \n", ARCH);
-    	printmsg(" -----------------------------------\n");
+    	tty_print(" -----------------------------------\n");
+    	tty_print(" --- Welcome to TheWired kernel! ---\n");
+    	tty_print(" -----------------------------------\n");
+    	tty_print(" Build date: %s                     \n", BUILD_TIME);
+    	tty_print(" C compiler version: %s             \n", CC_VERSION);
+    	tty_print(" Assembler version: %s              \n", AS_VERSION);
+    	tty_print(" Arch: %s                           \n", ARCH);
+    	tty_print(" -----------------------------------\n");
 	#endif
 
-    printmsg("Keyboard test:\n");
-    printmsg("> ");
+    tty_print("Keyboard test:\n");
+    tty_print("> ");
 
 	while(1) {
         char c = keyboard_getchar();
