@@ -18,7 +18,7 @@ To make it possible to compile the kernel as flexibly as possible, various compi
 - `ARCH=*` - Specifies the architecture for which the kernel should be compiled. Possible values: `X32`, `X64`
 
 ## 3. Nix package manager
-You can use the `scripts/nix_build.sh` script to compile everything within the Nix package manager environment, which automatically installs all dependencies. However, if you want to compile the project using non-standard options, you'll have to edit the script manually.
+You can use the `scripts/nix_build.sh` script to compile everything within the Nix package manager environment, which automatically installs all dependencies. However, if you want to compile the project using non-standard options, you'll have to edit the script manually. You can find `shell.nix` here, if needed: `scripts/assets/shell.nix`.
 
 ## 4. Cross development tools
 Standard tools will usually work, but it is recommended that you install cross-dev tools. If, for some reason, you are unable to do so using your package manager, you can use this scripts located in the `scripts` directory at the root of the project:
