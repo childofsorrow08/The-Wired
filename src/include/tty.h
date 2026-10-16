@@ -1,25 +1,8 @@
 #if !defined(TTY_H)
 #define TTY_H
 
-#include <colors.h>
-
-typedef struct tty {
-	int x;
-	int y;
-	colors color;
-} tty;
-
-extern tty cursor;
-
-extern int tty_x();
-extern int tty_y();
-extern void tty_new_x(int new_x);
-extern void tty_new_y(int new_y);
-extern void tty_add_x(int change);
-extern void tty_add_y(int change);
-
 /*
- * printf() implementation, but printmsg():
+ * printf() implementation, but tty_print():
  *
  * - Takes any number of arguments and replaces %*
  * with the corresponding output
@@ -31,6 +14,9 @@ extern void tty_add_y(int change);
  * %c - char
  * %% - %
  */
-extern void printmsg(char *msg, ...);
+extern void tty_print(char *msg, ...);
+extern void tty_input(char c);
+extern void tty_set_color(int color);
+extern void tty_def_color(void);
 
 #endif

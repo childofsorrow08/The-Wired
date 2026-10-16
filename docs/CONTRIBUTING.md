@@ -35,4 +35,6 @@ However, for those who will be working on this project with me, the rules that m
 
 2) If file used only for X64 arch, you need to put `#if defined(X64)` on the start of the file, and `#endif` in the end. Previously, I specified source files manually, now they are searched for automatically - it's impossible to specify which ones should be compiled and which ones shouldn't, so the easiest way to avoid problems is to use preprocessor directives.
 
-3) For now, there won't be many code-related rules, since I'm the only developer at the moment, and I'm not really sure what specific rules I want to see here
+3) Only global header files that can be used anywhere in the kernel code are placed in the root of the `src/include` directory. However, if certain definitions are to be used only within a specific module or driver, the `.h` file with the corresponding name must be located in the `src/include/private` directory.
+
+4) For now, there won't be many code-related rules, since I'm the only developer at the moment, and I'm not really sure what specific rules I want to see here
