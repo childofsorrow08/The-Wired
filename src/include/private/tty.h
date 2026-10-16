@@ -4,7 +4,7 @@
 typedef struct tty {
 	int x;
     int y;
-    colors color;
+    int color;
 } tty;
 
 extern tty cursor;
