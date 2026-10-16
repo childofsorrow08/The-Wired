@@ -3,6 +3,7 @@
 
 #include <framebuffer.h>
 #include <keyboard.h>
+#include <helpers/colors.h>
 #include <tty.h>
 
 void _main(void) {
@@ -29,6 +30,14 @@ void _main(void) {
     	tty_print(" Arch: %s                           \n", ARCH);
     	tty_print(" -----------------------------------\n");
 	#endif
+
+	tty_set_color(COLOR_CYAN);
+	tty_print("cyan\n");
+	tty_set_color(COLOR_DARKGREEN);
+	tty_print("dark green\n");
+	tty_set_color(COLOR_MAGENTA);
+	tty_print("magenta\n");
+	tty_def_color();
 
     tty_print("Keyboard test:\n");
     tty_print("> ");
