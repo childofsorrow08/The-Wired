@@ -5,9 +5,9 @@
 This project has different Make targets for various tasks; you can see a list of them below:
 
 - Build targets:
-	1) `all` - Uses all targets that build binaries
-	2) `build` - It simply builds kernel with the `.elf` extension
-	3) `iso` - It uses the `build` target, then packages the result into an ISO file with GRUB pre-installed
+	1) **`all`** - Uses all targets that build binaries
+	2) **`build`** - It simply builds kernel with the `.elf` extension
+	3) **`iso`** - It uses the `build` target, then packages the result into an ISO file with GRUB pre-installed
 
 - GitHub Actions targets:
 	1) `webkernel` - It uses the `iso` target to build x32 kernel with preinstalled grub, then copies the result to the folder required for the website
