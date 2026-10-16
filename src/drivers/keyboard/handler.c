@@ -28,7 +28,7 @@ void keyboard_irq_handler(void) {
     } else if (shift && us_shift_map[code]) {
         c = us_shift_map[code];
     }
-    enqueue(c);
+    keyboard_enqueue(c);
 
 done:
     outb(PORT_PIC1_COMMAND, 0x20);

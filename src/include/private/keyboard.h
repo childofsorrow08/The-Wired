@@ -20,7 +20,7 @@ extern keyboard_t kb;
 
 extern void keyboard_init(void);
 
-extern void enqueue(char c);
+extern void keyboard_enqueue(char c);
 extern char keyboard_getchar(void);
 extern void keyboard_irq_handler(void);
 
