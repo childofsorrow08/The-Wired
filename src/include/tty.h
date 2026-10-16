@@ -16,4 +16,5 @@
  */
 extern void tty_print(char *msg, ...);
 extern void tty_input(char c);
+
 #endif
