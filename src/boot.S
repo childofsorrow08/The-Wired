@@ -11,6 +11,7 @@
 	.extern paging_init
 	.extern gdt_init
 	.extern idt_init
+	.extern pic_init
 	.extern _main
 
 _start32:
@@ -27,6 +28,7 @@ _start32:
 
 	call gdt_init
 	call idt_init
+	call pic_init
 	call paging_init
 
 	call _main

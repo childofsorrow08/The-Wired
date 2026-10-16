@@ -2,19 +2,48 @@
 #include <stddef.h>
 
 #include <framebuffer.h>
-#include <variables.h>
+#include <keyboard.h>
+#include <helpers/colors.h>
 #include <tty.h>
 
 void _main(void) {
-	framebuffer_init();
+    framebuffer_init();
+    keyboard_init();
 
-	int i = 30;
-	char* str = "Welcome to TheWired kernel btw \nI should work on my naming";
-	printmsg("Some text for test, also random int: %d \n", i);
-	printmsg("%s", str);
-	printmsg("\nAlmost forgot to test this: %%");
+	#if defined(BUILD_TIME) || \
+		defined(CC_VERSION) || \
+		defined(AS_VERSION) || \
+		defined(ARCH)
 
-	while (1) {
-		__asm__ volatile("hlt");
-	}
+		/*
+		 * Just prints build metadata
+		 * #if defined because i can delete this later,
+		 * and forget about it
+		 */
+
+    	tty_print(" -----------------------------------\n");
+    	tty_print(" --- Welcome to TheWired kernel! ---\n");
+    	tty_print(" -----------------------------------\n");
+    	tty_print(" Build date: %s                     \n", BUILD_TIME);
+    	tty_print(" C compiler version: %s             \n", CC_VERSION);
+    	tty_print(" Assembler version: %s              \n", AS_VERSION);
+    	tty_print(" Arch: %s                           \n", ARCH);
+    	tty_print(" -----------------------------------\n");
+	#endif
+
+	tty_set_color(COLOR_CYAN);
+	tty_print("cyan\n");
+	tty_set_color(COLOR_DARKGREEN);
+	tty_print("dark green\n");
+	tty_set_color(COLOR_MAGENTA);
+	tty_print("magenta\n");
+	tty_def_color();
+
+    tty_print("Keyboard test:\n");
+    tty_print("> ");
+
+	while(1) {
+        char c = keyboard_getchar();
+        tty_input(c);
+    }
 }
