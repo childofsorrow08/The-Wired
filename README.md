@@ -41,7 +41,7 @@ I’d also like to share my plans for each release, starting with version 0.4 an
 
 | 	Version 	| 				  Plan 				| Already done? |
 | :---: 	 	| :--- 								| :---:			 |
-| 0.4			| Basic support for keyboard input, for the subsequent creation of a basic shell. | ➖ |
+| 0.4			| Basic support for keyboard input, for the subsequent creation of a basic shell. | ✅ |
 | 0.5			| A basic shell capable of performing minimal functions, temporarily embedded in the kernel | ➖ |
 | 0.6			| Basic file system operations, functions for creating and searching for files for testing purposes | ➖ |
 | 0.7			| The ability to run binary applications separately from the kernel | ➖ |
