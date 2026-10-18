@@ -4,6 +4,15 @@ Developed as a hobby, as well as an opportunity to learn low-level programming a
 
 A monolithic kernel that will contain everything necessary for a minimal operating system. I’m not promising much, but I’ll keep adding features as long as I can and want to.
 
+## AI / Machine Learning
+
+I do not consent to this repository, its source code, documentation,
+or other contents being used as training data for generative AI or
+machine-learning models.
+
+Please do not use this project for model training, fine-tuning,
+dataset construction, or similar purposes.
+
 # How to build:
 > Note: If you want to test this kernel, you can do this online [here](https://childofsorrow08.github.io/The-Wired/)!
 
