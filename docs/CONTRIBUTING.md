@@ -34,6 +34,8 @@ However, for those who will be working on this project with me, the rules that m
 
 3) It is prohibited to generate commit titles using AI.
 
+4) If you're updating documentation or files like `.gitignore`, `.girattributes`, or `.editorconfig`, you don't have to specify in the commit message exactly what you changed there. It's enough to update that file in a separate commit from the others and write, for example, `📝 .gitignore update`, where `.gitignore` is replaced with the name of the file you changed.
+
 ## 3. Code rules
 
 1) The use of AI is permitted to create a quick prototype of a particular feature - for example, to try to figure out how something works - but its final version must always be written manually by a programmer.
