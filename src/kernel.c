@@ -34,19 +34,6 @@ void _main(void) {
 
     welcome_msg();
 
-	tty_set_color(COLOR_CYAN);
-	tty_print("cyan\n");
-	tty_set_color(COLOR_DARKGREEN);
-	tty_print("dark green\n");
-	tty_set_color(COLOR_MAGENTA);
-	tty_print("magenta\n");
-	tty_def_color();
-
-    tty_print("Keyboard test:\n");
-    tty_print("> ");
-
-    char cmd_buffer[256];
-    int cmd_index = 0;
 
     uint8_t sector[512];
 
@@ -61,7 +48,12 @@ void _main(void) {
         tty_print("ATA read failed: %d\n", result);
     }
 
-	while(1) {
+    tty_print("> ");
+
+    char cmd_buffer[256];
+    int cmd_index = 0;
+
+    while(1) {
         char c = keyboard_getchar();
         tty_input(c);
 
