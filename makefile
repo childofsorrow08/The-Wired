@@ -24,5 +24,5 @@ include $(MAKECFG_DIR)/targets/run.mk
 all: build iso
 
 # Ignore this, only needed for GitHub Actions
-include $(ROOT_DIR)/.github/pages.mk
-include $(ROOT_DIR)/.github/release.mk
+include $(MAKECFG_DIR)/actions/build.mk
+include $(MAKECFG_DIR)/actions/clean.mk
