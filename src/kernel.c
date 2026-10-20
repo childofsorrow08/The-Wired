@@ -6,6 +6,7 @@
 #include <keyboard.h>
 #include <helpers/colors.h>
 #include <tty.h>
+#include <ata.h>
 
 void process_command(char buffer[256]) {
     int i = 0;
@@ -65,6 +66,24 @@ void _main(void) {
 
     char cmd_buffer[256];
     int cmd_index = 0;
+
+    uint8_t sector[512];
+
+    int result = ata_pio_read28(0, 1, sector);
+
+    if (result == 0) {
+        tty_print("ATA read successful\n");
+
+        tty_print(
+            "First bytes: %x %x %x %x\n",
+            sector[0],
+            sector[1],
+            sector[2],
+            sector[3]
+        );
+    } else {
+        tty_print("ATA read failed: %d\n", result);
+    }
 
 	while(1) {
         char c = keyboard_getchar();
