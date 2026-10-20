@@ -35,7 +35,7 @@ dataset construction, or similar purposes.
 
 ```bash
 git clone https://github.com/childofsorrow08/The-Wired
-cd The-Wired/src
+cd The-Wired
 make build ARCH=*
 ```
 

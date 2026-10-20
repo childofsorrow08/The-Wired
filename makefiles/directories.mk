@@ -1,4 +1,4 @@
-ROOT_DIR := $(abspath $(SRC_DIR)/..)
+SRC_DIR := $(abspath $(ROOT_DIR)/src)
 
 MAKECFG_DIR := $(ROOT_DIR)/makefiles
 SCRIPTS_DIR := $(ROOT_DIR)/scripts

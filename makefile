@@ -6,8 +6,8 @@
 # the Free Software Foundation, either version 3 of the License, or
 # (at your option) any later version.
 
-SRC_DIR := $(patsubst %/,%,$(dir $(abspath $(lastword $(MAKEFILE_LIST)))))
-include $(SRC_DIR)/../makefiles/directories.mk
+ROOT_DIR := $(patsubst %/,%,$(dir $(abspath $(lastword $(MAKEFILE_LIST)))))
+include $(ROOT_DIR)/makefiles/directories.mk
 include $(MAKECFG_DIR)/prerequisites.mk
 
 include $(MAKECFG_DIR)/sources.mk

@@ -26,7 +26,6 @@ void tty_input(char c) {
     }
     if (c == '\n') {
         tty_putchar('\n');
-        tty_putchar('>');
         tty_putchar(' ');
         typed_chars = 0;
         return;
