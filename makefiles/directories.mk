@@ -14,6 +14,8 @@ X64_BIN_DIR := $(X64_BUILD_DIR)/bin
 X32_ISO_DIR := $(X32_BUILD_DIR)/iso
 X32_ISO_IMG := $(X32_BIN_DIR)/wired.iso
 
+DISK_IMG := $(BUILD_DIR)/disk.img
+
 X32_ELF := $(X32_BIN_DIR)/wired.elf
 
 LD_SCRIPT := $(MAKECFG_DIR)/linker/linker.ld
