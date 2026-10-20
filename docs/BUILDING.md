@@ -9,9 +9,15 @@ This project has different Make targets for various tasks; you can see a list of
 2) **`build`** - It simply builds kernel with the `.elf` extension
 3) **`iso`** - It uses the `build` target, then packages the result into an ISO file with GRUB pre-installed
 
+- Clean targets:
+1) **`clean`** - Removes the `build` directories for the x32 and x64 versions of the kernel
+2) **`cleanbin`** - Removes the `binary` directories for the x32 and x64 versions of the kernel
+3) **`cleanlocalt`** - Removes cross-development tools installed locally using a script
+4) **`cleanall`** - Completely deletes the directory containing builds, binaries, and so on
+
 - GitHub Actions targets:
-1) `webkernel` - It uses the `iso` target to build x32 kernel with preinstalled grub, then copies the result to the folder required for the website
-2) `release` - It uses the `all` target, then copies all the generated binaries to a separate folder and names them according to their role so that the `.yml` script can simply load all the binaries and create a release draft on GitHub
+1) **`webkernel`** - It uses the `iso` target to build x32 kernel with preinstalled grub, then copies the result to the folder required for the website
+2) **`release`** - It uses the `all` target, then copies all the generated binaries to a separate folder and names them according to their role so that the `.yml` script can simply load all the binaries and create a release draft on GitHub
 
 ## 2. Build options
 To make it possible to compile the kernel as flexibly as possible, various compilation options will be added on an ongoing basis to help you manage the build process conveniently:
