@@ -8,6 +8,7 @@
 extern void tty_msg_string(char *str);
 extern void tty_print_decimal(int value);
 extern void tty_print_char(char c);
+extern void tty_print_hex(uint32_t value);
 extern void tty_print_default(char c);
 
 void tty_print(char *msg, ...) {
@@ -38,6 +39,13 @@ void tty_print(char *msg, ...) {
                 case 'c': {
                     char c = (char)va_arg(args, int);
 					tty_print_char(c);
+                    break;
+                }
+
+                // hexadecimal
+                case 'x': {
+                    uint32_t value = va_arg(args, uint32_t);
+                    tty_print_hex(value);
                     break;
                 }
 
