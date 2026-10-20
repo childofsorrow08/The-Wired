@@ -74,13 +74,8 @@ void _main(void) {
     if (result == 0) {
         tty_print("ATA read successful\n");
 
-        tty_print(
-            "First bytes: %x %x %x %x\n",
-            sector[0],
-            sector[1],
-            sector[2],
-            sector[3]
-        );
+        tty_print("Signature 1: %x\n", sector[510]);
+        tty_print("Signature 2: %x\n", sector[511]);
     } else {
         tty_print("ATA read failed: %d\n", result);
     }
