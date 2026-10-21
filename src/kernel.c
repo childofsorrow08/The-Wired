@@ -10,6 +10,8 @@
 // test functions
 extern void process_command(char buffer[256]);
 extern void testfs(int result, fat16_fs_t fs, fat16_dir_entry_t entry);
+extern void userspace_init(void (*entry)(void)); // src/boot/userspace.S
+extern void user_test(void);
 
 void _main(void) {
     framebuffer_init();
@@ -23,30 +25,9 @@ void _main(void) {
 
     testfs(result, fs, entry);
 
-    tty_print("> ");
-
-    char cmd_buffer[256];
-    int cmd_index = 0;
+    userspace_init(user_test);
 
     while(1) {
-        char c = keyboard_getchar();
-        tty_input(c);
-
-        // Probably a bit messy, but i will rewrite shell in future
-        if (c == '\n') {
-            cmd_buffer[cmd_index] = '\0';
-            process_command(cmd_buffer);
-            tty_print("> ");
-            cmd_index = 0;
-        } else if (c == '\b') {
-            if (cmd_index > 0) {
-                cmd_index--;
-            }
-        } else {
-            if (cmd_index < 256 - 1) {
-                cmd_buffer[cmd_index] = c;
-                cmd_index++;
-            }
-        }
+        __asm__ volatile ("hlt");
     }
 }
