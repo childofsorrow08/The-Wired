@@ -2,6 +2,7 @@
 .section .text
 	.global outb
 	.global inb
+    .global inw
 
 outb:
     movw 4(%esp), %dx
@@ -11,5 +12,12 @@ outb:
 
 inb:
     movw 4(%esp), %dx
+    xorl %eax, %eax
     inb %dx, %al
+    ret
+
+inw:
+    movw 4(%esp), %dx
+    xorl %eax, %eax
+    inw %dx, %ax
     ret

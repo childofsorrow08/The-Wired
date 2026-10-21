@@ -1,72 +1,34 @@
 #include <stdint.h>
-#include <stddef.h>
 
 #include <helpers.h>
 #include <framebuffer.h>
 #include <keyboard.h>
-#include <helpers/colors.h>
 #include <tty.h>
 
-void process_command(char buffer[256]) {
-    int i = 0;
-    if (strcmp(buffer, "help") == 0) {
-        tty_print("Available commands: \n");
-        i++;
-    }
+#include <fs/fat16.h>
 
-    if (strcmp(buffer, "clear") == 0) {
-        // todo
-        i++;
-    }
-
-    if (strcmp(buffer, "info") == 0) {
-        tty_print("hi hello\n");
-        i++;
-    }
-
-    if(i == 0) tty_print("Unknown command: %s \n", buffer);
-}
+// test functions
+extern void process_command(char buffer[256]);
+extern void testfs(int result, fat16_fs_t fs, fat16_dir_entry_t entry);
 
 void _main(void) {
     framebuffer_init();
     keyboard_init();
 
-	#if defined(BUILD_TIME) || \
-		defined(CC_VERSION) || \
-		defined(AS_VERSION) || \
-		defined(ARCH)
+    welcome_msg();
 
-		/*
-		 * Just prints build metadata
-		 * #if defined because i can delete this later,
-		 * and forget about it
-		 */
+    fat16_fs_t fs;
+    fat16_dir_entry_t entry;
+    int result = fat16_init(&fs);
 
-    	tty_print(" -----------------------------------\n");
-    	tty_print(" --- Welcome to TheWired kernel! ---\n");
-    	tty_print(" -----------------------------------\n");
-    	tty_print(" Build date: %s                     \n", BUILD_TIME);
-    	tty_print(" C compiler version: %s             \n", CC_VERSION);
-    	tty_print(" Assembler version: %s              \n", AS_VERSION);
-    	tty_print(" Arch: %s                           \n", ARCH);
-    	tty_print(" -----------------------------------\n");
-	#endif
+    testfs(result, fs, entry);
 
-	tty_set_color(COLOR_CYAN);
-	tty_print("cyan\n");
-	tty_set_color(COLOR_DARKGREEN);
-	tty_print("dark green\n");
-	tty_set_color(COLOR_MAGENTA);
-	tty_print("magenta\n");
-	tty_def_color();
-
-    tty_print("Keyboard test:\n");
     tty_print("> ");
 
     char cmd_buffer[256];
     int cmd_index = 0;
 
-	while(1) {
+    while(1) {
         char c = keyboard_getchar();
         tty_input(c);
 

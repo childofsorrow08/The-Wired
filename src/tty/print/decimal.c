@@ -6,6 +6,5 @@
 
 void tty_print_decimal(int value) {
     char *str = int_to_str(value);
-    framebuffer_putstring(cursor.x, cursor.y, str, cursor.color);
-    while (*str++) { cursor.x += 8; }
+    while (*str) { tty_putchar(*str++); }
 }

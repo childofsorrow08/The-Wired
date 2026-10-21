@@ -49,7 +49,6 @@ jobs:
 
       - name: Build project
         run: |
-          cd src
           make webkernel
 
       - name: Upload pages artifact

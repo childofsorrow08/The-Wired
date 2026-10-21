@@ -19,10 +19,11 @@ include $(MAKECFG_DIR)/build_info.mk
 .DEFAULT_GOAL := iso
 include $(MAKECFG_DIR)/targets/build.mk
 include $(MAKECFG_DIR)/targets/clean.mk
+include $(MAKECFG_DIR)/targets/disc.mk
 include $(MAKECFG_DIR)/targets/iso.mk
 include $(MAKECFG_DIR)/targets/run.mk
 all: build iso
 
 # Ignore this, only needed for GitHub Actions
-include $(ROOT_DIR)/.github/pages.mk
-include $(ROOT_DIR)/.github/release.mk
+-include $(MAKECFG_DIR)/actions/release.mk
+-include $(MAKECFG_DIR)/actions/pages.mk
