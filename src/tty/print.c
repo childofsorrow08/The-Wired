@@ -38,7 +38,8 @@ void tty_print(char *msg, ...) {
 				// char
                 case 'c': {
                     char c = (char)va_arg(args, int);
-					tty_print_char(c);
+                    tty_putchar(c);
+					// tty_print_char(c);
                     break;
                 }
 
@@ -51,8 +52,7 @@ void tty_print(char *msg, ...) {
 
 				// %%%%%%%%%%%%%%%%%
                 case '%': {
-                    framebuffer_putchar(cursor.x, cursor.y, '%', cursor.color);
-                    cursor.x += 8;
+                    tty_putchar('%');
                     break;
                 }
 
@@ -64,8 +64,7 @@ void tty_print(char *msg, ...) {
 			cursor.y += 16;
             cursor.x = 0;
         } else {
-            framebuffer_putchar(cursor.x, cursor.y, msg[i], cursor.color);
-            cursor.x += 8;
+            tty_putchar(msg[i]);
         }
     }
 
