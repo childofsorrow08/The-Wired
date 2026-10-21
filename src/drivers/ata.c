@@ -5,8 +5,7 @@
 
 static int ata_wait_bsy(void) {
     uint8_t status;
-    while (status & ATA_SR_BSY)
-        status = inb(ATA_PRIMARY_IO + ATA_REG_STATUS);
+    do { status = inb(ATA_PRIMARY_IO + ATA_REG_STATUS); } while (status & ATA_SR_BSY);
     return 0;
 }
 
