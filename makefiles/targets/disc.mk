@@ -34,18 +34,27 @@ ifneq ($(TEST),)
 		'.section .text' \
 		'.global _start' \
 		'_start:' \
-		'    movl $$0, %eax' \
+		'    movl $$1, %eax' \
 		'    movl $$1, %ebx' \
 		'    movl $$message, %ecx' \
 		'    movl $$message_len, %edx' \
+		'    int $$0x80' \
+		'' \
+		'    movl $$1, %eax' \
+		'    movl $$1, %ebx' \
+		'    movl $$message2, %ecx' \
+		'    movl $$message2_len, %edx' \
 		'    int $$0x80' \
 		'1:' \
 		'    jmp 1b' \
 		'' \
 		'.section .rodata' \
 		'message:' \
-		'    .ascii "YES!\\n"' \
+		'    .ascii "YES!\n"' \
 		'.set message_len, . - message' \
+		'message2:' \
+		'    .ascii "NO!\n"' \
+		'.set message2_len, . - message2' \
 		> $(BUILD_DIR)/yes.S
 
 	@i686-elf-as --32 \
