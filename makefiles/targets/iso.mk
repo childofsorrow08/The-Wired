@@ -1,5 +1,5 @@
 ifeq ($(ARCH),X32)
-iso: $(X32_ELF)
+iso: $(X32_ELF) disk
 	@echo "[INFO] Building x32 ISO image"
 	@mkdir -p $(X32_ISO_DIR)/boot/grub
 	@mkdir -p $(X32_BIN_DIR)

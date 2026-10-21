@@ -8,6 +8,7 @@
 extern void tty_msg_string(char *str);
 extern void tty_print_decimal(int value);
 extern void tty_print_char(char c);
+extern void tty_print_hex(uint32_t value);
 extern void tty_print_default(char c);
 
 void tty_print(char *msg, ...) {
@@ -37,14 +38,21 @@ void tty_print(char *msg, ...) {
 				// char
                 case 'c': {
                     char c = (char)va_arg(args, int);
-					tty_print_char(c);
+                    tty_putchar(c);
+					// tty_print_char(c);
+                    break;
+                }
+
+                // hexadecimal
+                case 'x': {
+                    uint32_t value = va_arg(args, uint32_t);
+                    tty_print_hex(value);
                     break;
                 }
 
 				// %%%%%%%%%%%%%%%%%
                 case '%': {
-                    framebuffer_putchar(cursor.x, cursor.y, '%', cursor.color);
-                    cursor.x += 8;
+                    tty_putchar('%');
                     break;
                 }
 
@@ -56,8 +64,7 @@ void tty_print(char *msg, ...) {
 			cursor.y += 16;
             cursor.x = 0;
         } else {
-            framebuffer_putchar(cursor.x, cursor.y, msg[i], cursor.color);
-            cursor.x += 8;
+            tty_putchar(msg[i]);
         }
     }
 

@@ -48,7 +48,6 @@ jobs:
 
       - name: Build project
         run: |
-          cd src
           make release
 
       - name: Tag

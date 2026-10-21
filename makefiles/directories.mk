@@ -1,4 +1,4 @@
-ROOT_DIR := $(abspath $(SRC_DIR)/..)
+SRC_DIR := $(abspath $(ROOT_DIR)/src)
 
 MAKECFG_DIR := $(ROOT_DIR)/makefiles
 SCRIPTS_DIR := $(ROOT_DIR)/scripts
@@ -13,6 +13,8 @@ X64_BIN_DIR := $(X64_BUILD_DIR)/bin
 
 X32_ISO_DIR := $(X32_BUILD_DIR)/iso
 X32_ISO_IMG := $(X32_BIN_DIR)/wired.iso
+
+DISK_IMG := $(BUILD_DIR)/disk.img
 
 X32_ELF := $(X32_BIN_DIR)/wired.elf
 

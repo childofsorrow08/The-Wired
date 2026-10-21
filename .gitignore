@@ -17,9 +17,9 @@ hidden
 qemu.log
 serial.log
 
-# Kernel files
-wired.elf
-wired.efi
-wired.iso
-wired.img
-wired.bin
+# Binary files
+*.elf
+*.efi
+*.iso
+*.img
+*.bin

@@ -1,7 +1,10 @@
 #if !defined (HELPERS_H)
 #define HELPERS_H
 
-const unsigned char *get_font_glyph(char c);
-char *int_to_str(int value);
+extern const unsigned char *get_font_glyph(char c);
+extern int strcmp(const char *s1, const char *s2);
+extern char *int_to_str(int value);
+
+extern void welcome_msg(void);
 
 #endif
