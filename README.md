@@ -28,6 +28,7 @@ dataset construction, or similar purposes.
 
 ### Default dependencies
 
+- Linux. I don't want to bear with Windows tools
 - GCC and GNU Assembler (AS)
 - Makefiles
 

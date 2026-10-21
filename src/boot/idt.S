@@ -16,7 +16,9 @@ idtp:
 	.global idt_init
 	.global idt_start
 
+    .extern fill_default_idt
 	.extern set_irq1
+    .extern set_syscall
 
 idt_init:
     movl $256, %ecx
@@ -24,6 +26,7 @@ idt_init:
 
 	call fill_default_idt
 	call set_irq1
+    call set_syscall
 
     lidt idtp
     ret

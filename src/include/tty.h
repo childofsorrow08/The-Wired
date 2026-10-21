@@ -10,13 +10,18 @@
  * - Also can see newline symbol (\n)
  *
  * %d - int
+ * %x - hexadecimal integer
  * %s - char*
  * %c - char
  * %% - %
  */
 extern void tty_print(char *msg, ...);
+extern void tty_putchar(char c);
 extern void tty_input(char c);
 extern void tty_set_color(int color);
 extern void tty_def_color(void);
+
+// extern foid
+// ahahahahahahah
 
 #endif
