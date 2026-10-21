@@ -12,6 +12,7 @@ outb:
 
 inb:
     movw 4(%esp), %dx
+    xorl %eax, %eax
     inb %dx, %al
     ret
 
