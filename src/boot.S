@@ -10,6 +10,7 @@
 	.extern welcome_msg
 	.extern paging_init
 	.extern gdt_init
+    .extern tss_init
 	.extern idt_init
 	.extern pic_init
 	.extern _main
@@ -27,6 +28,8 @@ _start32:
     movl %ebx, multiboot_info_ptr
 
 	call gdt_init
+    call tss_init
+
 	call idt_init
 	call pic_init
 	call paging_init
