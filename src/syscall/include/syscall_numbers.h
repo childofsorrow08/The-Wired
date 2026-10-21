@@ -1,0 +1,11 @@
+#ifndef SYSCALL_NUMBERS_H
+#define SYSCALL_NUMBERS_H
+
+typedef enum {
+    SYS_EXIT  = 0,
+    SYS_WRITE = 1,
+
+    SYS_COUNT
+} syscall_number_t;
+
+#endif
