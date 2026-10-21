@@ -1,32 +1,15 @@
 #include <stdint.h>
-#include <stddef.h>
 
 #include <helpers.h>
 #include <framebuffer.h>
 #include <keyboard.h>
-#include <helpers/colors.h>
 #include <tty.h>
-#include <ata.h>
 
-void process_command(char buffer[256]) {
-    int i = 0;
-    if (strcmp(buffer, "help") == 0) {
-        tty_print("Available commands: \n");
-        i++;
-    }
+#include <fs/fat16.h>
 
-    if (strcmp(buffer, "clear") == 0) {
-        // todo
-        i++;
-    }
-
-    if (strcmp(buffer, "info") == 0) {
-        tty_print("hi hello\n");
-        i++;
-    }
-
-    if(i == 0) tty_print("Unknown command: %s \n", buffer);
-}
+// test functions
+extern void process_command(char buffer[256]);
+extern void testfs(int result, fat16_fs_t fs, fat16_dir_entry_t entry);
 
 void _main(void) {
     framebuffer_init();
@@ -34,19 +17,11 @@ void _main(void) {
 
     welcome_msg();
 
+    fat16_fs_t fs;
+    fat16_dir_entry_t entry;
+    int result = fat16_init(&fs);
 
-    uint8_t sector[512];
-
-    int result = ata_pio_read28(0, 1, sector);
-
-    if (result == 0) {
-        tty_print("ATA read successful\n");
-
-        tty_print("Signature 1: %x\n", sector[510]);
-        tty_print("Signature 2: %x\n", sector[511]);
-    } else {
-        tty_print("ATA read failed: %d\n", result);
-    }
+    testfs(result, fs, entry);
 
     tty_print("> ");
 
