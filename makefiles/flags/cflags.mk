@@ -10,6 +10,7 @@ CFLAGS := \
     -Wall \
     -Wextra \
     -O2		\
-	-I$(SRC_DIR)/include
+	-I$(SRC_DIR)/include \
+	-I$(SRC_DIR)/libc/include
 
 # -Werror \
