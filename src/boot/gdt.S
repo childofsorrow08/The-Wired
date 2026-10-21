@@ -6,11 +6,16 @@
 #if defined(X32)
 .align 8
 gdt_start:
-	.quad 0x0000000000000000 // Null Descriptor		||
+	.quad 0x0000000000000000 // Null Descriptor		|| 0x00
 	.quad 0x00cf9a000000ffff // Kernel Code Segment	|| 0x08
 	.quad 0x00cf92000000ffff // Kernel Data Segment	|| 0x10
-gdt_end:
+    .quad 0x00CFFA000000FFFF // User Code Segment   || 0x18
+    .quad 0x00CFF2000000FFFF // User Data Segment   || 0x20
 
+.global gdt_tss
+gdt_tss:
+    .quad 0x0000890000000067 // TSS                 || 0x28
+gdt_end:
 
 gdtr:
     .word gdt_end - gdt_start - 1
