@@ -17,4 +17,9 @@ int fat16_find_root(fat16_fs_t *fs,
                     fat16_dir_entry_t *result
 );
 
+extern int fat16_read_file(fat16_fs_t *fs,
+                           const fat16_dir_entry_t *entry,
+                           void *buffer,
+                           uint32_t buffer_size);
+
 #endif
