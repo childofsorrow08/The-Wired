@@ -67,7 +67,7 @@ I’d also like to share my plans for each release, starting with version 0.4 an
 | :---: | :--- | :---: |
 | 0.4 | Basic support for keyboard input, for the subsequent creation of a basic shell. | ✅ |
 | 0.5 | A basic shell capable of performing minimal functions, temporarily embedded in the kernel | ✅ |
-| 0.6 | Basic file system operations, functions for creating and searching for files for testing purposes | ➖ |
+| 0.6 | Basic file system operations, functions for creating and searching for files for testing purposes | ✅ |
 | 0.7 | The ability to run binary applications separately from the kernel | ➖ |
 | 0.8 | An API for interacting with the kernel, so that programs do not access kernel functions or low-level hardware directly, perhaps a minimal libc, perhaps expanding the number of kernel functions so that most of libc's functionality is available, and adding a directory where the header files required by the system will be copied | ➖ |
 | 0.9 | Creating several minimal shell commands that are separate from the kernel, and teaching the shell to look for them in the correct directories | ➖ |
