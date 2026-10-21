@@ -1,7 +1,7 @@
 webkernel:
 	@echo "[INFO] Building X32 Kernel..."
 	@$(MAKE) ARCH=X32 iso
-	@$(MAKE) ARCH=X32 disk
+	@$(MAKE) ARCH=X32 disk TEST=1
 
 	@echo "[INFO] Copying ISO image for GitHub Pages"
 	@mkdir -p $(WEBKERNEL_DIR)
