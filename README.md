@@ -79,6 +79,7 @@ I’d also like to share my plans for each release, starting with version 0.4 an
 ## For developers
 
 - [CONTRIBUTING.md](docs/CONTRIBUTING.md)
+- [SYSCALLS.md](docs/SYSCALLS.md)
 
 ## User-related
 
