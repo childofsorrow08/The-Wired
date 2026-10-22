@@ -19,7 +19,6 @@ void _main(void) {
     int result = fat16_init(&fs);
 
     // now we're cooking
-    load_yes_elf(entry, fs);
 
     while(1) {
         __asm__ volatile ("hlt");
