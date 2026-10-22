@@ -10,6 +10,11 @@
 
 So, my kernel, like any other, has its own system calls. In this file, you'll find all the rules for working with them, their numbers, which registers are used to pass arguments and return values, and so on.
 
+> [!WARNING]
+> Until the ABI is explicitly declared stable, any part of the syscall interface may change without notice between versions. This includes syscall numbers, calling conventions, register usage, argument and return value formats, data structures, and error handling.
+>
+> Userspace software should not rely on backward compatibility with older kernel versions at this stage of development.
+
 ## System call ranges
 
 All calls will be divided into ranges by category:
