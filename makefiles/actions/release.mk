@@ -1,6 +1,5 @@
 release:
 	@echo "[INFO] Building X32 release..."
-	@$(MAKE) cleanall
 	@$(MAKE) ARCH=X32 all
 
 #    @echo "[INFO] Building X64 release..."
