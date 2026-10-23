@@ -1,2 +1,2 @@
-build: $(KERNEL_ELF)
-	@echo "[INFO] $(ARCH) kernel built: $(KERNEL_ELF)"
+build: $(ELF)
+	@echo "[INFO] $(ARCH) kernel built: $(ELF)"
