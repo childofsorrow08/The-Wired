@@ -29,7 +29,7 @@ However, for those who will be working on this project with me, the rules that m
 
 3. `the-wired` - main branch, and the `!dev/artificial-suicide` - dev branch.
 
-    > Note:
+    > [!NOTE]
     > `!dev` prefix to ensure that the branch is always second on the list of branches on GitHub and stands out from the other `dev` branches. You can ignore the name.
 
 4. `the-wired` should always contain only stable versions, `!dev/artificial-suicide` contains the latest code.

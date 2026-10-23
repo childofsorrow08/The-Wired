@@ -1,5 +1,5 @@
-#ifndef SYSCALL_H
-#define SYSCALL_H
+#ifndef SYSCALL_32_H
+#define SYSCALL_32_H
 
 int32_t syscall_dispatch(
     uint32_t number,

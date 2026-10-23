@@ -18,4 +18,6 @@ struct multiboot_tag_framebuffer {
     uint16_t reserved;
 } __attribute__((packed));
 
+extern unsigned long multiboot_info_ptr;
+
 #endif

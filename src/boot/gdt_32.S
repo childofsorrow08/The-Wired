@@ -3,8 +3,8 @@
 // https://wiki.osdev.org/GDT_Tutorial
 
 .section .data
-#if defined(X32)
-.align 8
+    .align 8
+    .global gdt_tss
 gdt_start:
 	.quad 0x0000000000000000 // Null Descriptor		|| 0x00
 	.quad 0x00cf9a000000ffff // Kernel Code Segment	|| 0x08
@@ -12,7 +12,6 @@ gdt_start:
     .quad 0x00CFFA000000FFFF // User Code Segment   || 0x18
     .quad 0x00CFF2000000FFFF // User Data Segment   || 0x20
 
-.global gdt_tss
 gdt_tss:
     .quad 0x0000890000000067 // TSS                 || 0x28
 gdt_end:
@@ -20,13 +19,11 @@ gdt_end:
 gdtr:
     .word gdt_end - gdt_start - 1
     .long gdt_start
-#endif
 
 .section .boot, "ax", @progbits
 	.global gdt_init
 
 .align 2
-#if defined(X32)
 
 gdt_init:
 	lgdt gdtr
@@ -41,4 +38,3 @@ gdt_init:
 	ljmp $0x08, $ljmp_label
 ljmp_label:
     ret
-#endif

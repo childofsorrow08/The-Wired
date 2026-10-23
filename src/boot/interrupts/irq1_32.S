@@ -5,7 +5,6 @@
 	.extern keyboard_irq_handler
 	.extern idt_start
 
-#if defined(X32)
 irq1_entry:
     pushal
     pushl %ds
@@ -33,4 +32,3 @@ set_irq1:
     shrl $16, %eax
     movw %ax, 6(%edx)
 	ret
-#endif

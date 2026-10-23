@@ -1,7 +1,7 @@
 #include <stdint.h>
 
 #include <syscall_numbers.h>
-#include <syscall.h>
+#include <syscall_32.h>
 #include <private/tty.h>
 #include <tty.h>
 

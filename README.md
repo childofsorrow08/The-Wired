@@ -21,7 +21,7 @@ dataset construction, or similar purposes.
 
 # How to build
 
-> Note:
+> [!NOTE]
 > If you want to test this kernel, you can do this [online here](https://childofsorrow08.github.io/The-Wired/)!
 
 ## Dependencies
@@ -32,7 +32,7 @@ dataset construction, or similar purposes.
 - GCC and GNU Assembler (AS)
 - Makefiles
 
-> Note:
+> [!TIP]
 > Please, use [cross-compilers](docs/BUILDING.md#4-cross-development-tools).
 
 ### ISO image dependencies
@@ -44,7 +44,7 @@ dataset construction, or similar purposes.
 
 - QEMU
 
-> Note:
+> [!IMPORTANT]
 > If you want to use `runiso` target to test kernel, you also need ISO image dependencies
 
 ## Build process
@@ -52,12 +52,14 @@ dataset construction, or similar purposes.
 ```bash
 git clone https://github.com/childofsorrow08/The-Wired
 cd The-Wired
-make build ARCH=*
+make build ARCH=X32
 ```
 
-> Note:
-> Instead of * specify arch you want. For example, ARCH=X32 or ARCH=X64. Also you can see [full list of compile options here](docs/BUILDING.md#2-build-options).
+> [!TIP]
+> Instead of X32 specify arch you want. Also you can see [full list of compile options here](docs/BUILDING.md#2-build-options).
+>
 > Instead of `build`, you can specify another target you need. You can see [all targets here](docs/BUILDING.md#1-makefile-targets).
+>
 > Also, if you're using NixOS or Nix package manager, [you can use the script to build in the nix-shell](docs/BUILDING.md#3-nix-package-manager).
 
 # Release Roadmap
@@ -79,6 +81,7 @@ I’d also like to share my plans for each release, starting with version 0.4 an
 ## For developers
 
 - [CONTRIBUTING.md](docs/CONTRIBUTING.md)
+- [SYSCALLS.md](docs/SYSCALLS.md)
 
 ## User-related
 

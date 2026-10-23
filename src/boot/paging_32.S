@@ -7,7 +7,6 @@
 # but just in case, it's a good idea to make a larger batch if needed
 # https://wiki.osdev.org/X86_Paging
 
-#if defined(X32)
 paging_init:
 	movl $0, %eax
     movl $0x100000, %ebx
@@ -23,5 +22,4 @@ paging_init:
 	movl $table_768, %eax
 	movl %eax, %cr3
 	ret
-#endif
 

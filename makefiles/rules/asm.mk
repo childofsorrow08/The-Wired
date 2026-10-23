@@ -1,7 +1,3 @@
-ifeq ($(ARCH),X32)
-
-$(X32_OBJ_DIR)/%.o: $(SRC_DIR)/%.s
+$(OBJ_DIR)/%.o: $(SRC_DIR)/%.s
 	@mkdir -p $(dir $@)
-	@$(AS32) $(ASFLAGS_32) $< -o $@
-
-endif
+	@$(AS) $(ASFLAGS) $< -o $@

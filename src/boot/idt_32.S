@@ -1,6 +1,5 @@
 .code32
 
-#if defined(X32)
 .section .data
 .align 8
 idt_start:
@@ -30,4 +29,3 @@ idt_init:
 
     lidt idtp
     ret
-#endif

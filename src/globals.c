@@ -1,3 +1,14 @@
+/*
+ * Copyright (C) 2026 Child of Sorrow
+ *
+ * This file is part of TheWired kernel.
+ *
+ * TheWired kernel is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation, either version 3 of the License, or
+ * (at your option) any later version.
+ */
+
 #include <stdint.h>
 #include <helpers/colors.h>
 
@@ -15,7 +26,3 @@ keyboard_t kb = { "0", 0, 0, 0, 0, 0, 0, 0 };
 // TTY | For use in TTY driver
 #include <private/tty.h>
 tty cursor = { 0, 0, COLOR_WHITE };
-
-// Filesystem objs
-#include <fs/fat16.h>               // unused for now
-fat16_fs_t fs = { 0, 0, 0, 0, 0 };  // don't know if i want to use this

@@ -10,19 +10,28 @@ ROOT_DIR := $(patsubst %/,%,$(dir $(abspath $(lastword $(MAKEFILE_LIST)))))
 include $(ROOT_DIR)/makefiles/directories.mk
 include $(MAKECFG_DIR)/prerequisites.mk
 
-include $(MAKECFG_DIR)/sources.mk
 include $(MAKECFG_DIR)/toolchain.mk
-include $(MAKECFG_DIR)/flags.mk
-include $(MAKECFG_DIR)/rules.mk
+
+include $(MAKECFG_DIR)/flags/cflags.mk
+include $(MAKECFG_DIR)/flags/asflags.mk
+include $(MAKECFG_DIR)/flags/ldflags.mk
 include $(MAKECFG_DIR)/build_info.mk
 
+include $(MAKECFG_DIR)/sources.mk
+
+include $(MAKECFG_DIR)/rules/c.mk
+include $(MAKECFG_DIR)/rules/S.mk
+include $(MAKECFG_DIR)/rules/asm.mk
+include $(MAKECFG_DIR)/rules/ld.mk
+
 .DEFAULT_GOAL := iso
+.PHONY: all build iso disk runiso clean cleanbin cleanlocalt cleanall
 include $(MAKECFG_DIR)/targets/build.mk
 include $(MAKECFG_DIR)/targets/clean.mk
-include $(MAKECFG_DIR)/targets/disc.mk
+include $(MAKECFG_DIR)/targets/disk.mk
 include $(MAKECFG_DIR)/targets/iso.mk
 include $(MAKECFG_DIR)/targets/run.mk
-all: build iso
+all: build disk iso
 
 # Ignore this, only needed for GitHub Actions
 -include $(MAKECFG_DIR)/actions/release.mk
