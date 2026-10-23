@@ -1,11 +1,9 @@
 .code32
 
 .section .boot, "ax", @progbits
-
-.global set_syscall
-
-.extern idt_start
-.extern syscall_dispatch
+    .global set_syscall
+    .extern idt_start
+    .extern syscall_dispatch
 
 #if defined(X32)
 
