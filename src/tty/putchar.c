@@ -7,7 +7,19 @@
 void tty_putchar(char c) {
     if (!fb.base || fb.width < 8 || fb.height < 16) return;
 
-    if (c == '\n') {
+    if (c == '\b') {
+        if (cursor.x >= 8) {
+            cursor.x -= 8;
+        } else if (cursor.y >= 16) {
+            cursor.y -= 16;
+            cursor.x = ((int)(fb.width / 8u) - 1) * 8;
+        } else {
+            return;
+        }
+        for (int y = 0; y < 16; ++y)
+            for (int x = 0; x < 8; ++x)
+                fb.base[(cursor.y + y) * fb.pitch_pixels + cursor.x + x] = COLOR_BLACK;
+    } else if (c == '\n') {
         cursor.x = 0;
         cursor.y += 16;
     } else if (c == '\t') {

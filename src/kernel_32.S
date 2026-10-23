@@ -26,6 +26,7 @@ _main:
     call keyboard_init
 
     call welcome_msg
+    call start_shell
 
 // Kernel don't want to be here:
 .hang:

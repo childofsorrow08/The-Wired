@@ -10,6 +10,7 @@ int fat16_read_file(fat16_fs_t *fs,
                     uint32_t buffer_size) {
 
     if (!fs || !entry || !buffer) {return -1; }
+    if (entry->attributes & 0x18) { return -1; }
     if (entry->file_size > buffer_size) { return -2; }
     if (entry->file_size == 0) { return 0; }
 
@@ -20,7 +21,7 @@ int fat16_read_file(fat16_fs_t *fs,
     uint8_t sector[FAT16_SECTOR_SIZE];
 
     while (remaining > 0) {
-        if (cluster < 2) { return -3; }
+        if (cluster < 2 || cluster >= fs->cluster_count + 2 || cluster >= 0xFFF0) { return -3; }
         if (cluster == FAT16_CLUSTER_BAD) { return -4; }
         if (fat16_is_eof(cluster)) { return -5; }
 
