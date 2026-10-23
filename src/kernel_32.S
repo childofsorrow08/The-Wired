@@ -1,4 +1,5 @@
-/* Copyright (C) 2026 Child of Sorrow
+/*
+ * Copyright (C) 2026 Child of Sorrow
  *
  * This file is part of TheWired kernel.
  *
