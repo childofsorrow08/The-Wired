@@ -25,6 +25,8 @@
     .extern welcome_msg
 
 _main:
+    subl $12, %esp
+
     call framebuffer_init
     call keyboard_init
 
