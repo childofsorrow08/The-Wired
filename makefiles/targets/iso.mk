@@ -1,7 +1,7 @@
 ifeq ($(ARCH),X32)
 
 iso: $(X32_ELF)
-iso: submodule
+iso: submodules
 
 iso:
 	@echo "[INFO] Building x32 ISO image"
