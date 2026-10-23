@@ -69,4 +69,49 @@ movl $message_len, %edx
 int $0x80
 ```
 
+### Syscall 2: Read
+
+Reads keyboard input from stdin. Blocks until one character is available and
+returns one byte, even if the requested count is larger. Input is not echoed;
+userspace handles echo, line editing, and command buffering with `SYS_WRITE`.
+No null terminator is appended.
+
+| Register | Value |
+| :--- | :--- |
+| `EAX` | 2 |
+| `EBX` | File descriptor: 0 (stdin) |
+| `ECX` | Pointer to a writable buffer |
+| `EDX` | Buffer capacity in bytes |
+| `ESI` | Unused |
+| `EDI` | Unused |
+
+Returns 1 on a successful read, 0 for a zero-length request, or -1 on error.
+
+```gas
+movl $2, %eax
+xorl %ebx, %ebx
+movl $input_buffer, %ecx
+movl $1, %edx
+int $0x80
+```
+
+### Syscall 3: Clear terminal
+
+Clears the terminal to black and moves its cursor to the top left. The text
+color is preserved. stdout and stderr currently share the same terminal.
+
+| Register | Value |
+| :--- | :--- |
+| `EAX` | 3 |
+| `EBX` | File descriptor: 1 (stdout) or 2 (stderr) |
+| `ECX`–`EDI` | Unused |
+
+Returns 0 on success or -1 on error.
+
+```gas
+movl $3, %eax
+movl $1, %ebx
+int $0x80
+```
+
 ## Filesystem syscalls | Range from 101 to 200

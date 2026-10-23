@@ -43,5 +43,16 @@ int fat16_init(fat16_fs_t *fs) {
         fs->root_start_lba +
         fs->root_sector_count;
 
+    uint32_t total = fs->bpb.total_sectors_16 ?
+        fs->bpb.total_sectors_16 : fs->bpb.total_sectors_32;
+    uint32_t spc = fs->bpb.sectors_per_cluster;
+    if (spc > 128 || (spc & (spc - 1)) || total <= fs->data_start_lba)
+        return -10;
+    fs->cluster_count = (total - fs->data_start_lba) / spc;
+    if (fs->cluster_count < 4085 || fs->cluster_count >= 65525)
+        return -11;
+    if (fs->cluster_count + 2 >
+        (uint32_t)fs->bpb.sectors_per_fat * FAT16_SECTOR_SIZE / 2)
+        return -12;
     return 0;
 }
