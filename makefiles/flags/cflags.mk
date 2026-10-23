@@ -37,6 +37,4 @@ CFLAGS := 							\
     -Wall 							\
     -Wextra 						\
 									\
-	-I$(SRC_DIR)/include 			\
-	-I$(SRC_DIR)/syscall/include 	\
-	-I$(SRC_DIR)/libc/include
+	-I$(SRC_DIR)/include
