@@ -10,6 +10,7 @@ typedef struct {
     uint32_t root_sector_count;
 
     uint32_t data_start_lba;
+    uint32_t cluster_count;
 } fat16_fs_t;
 
 #endif

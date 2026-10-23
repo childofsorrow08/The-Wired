@@ -2,7 +2,6 @@
 
 #include <multiboot.h>
 #include <framebuffer.h>
-#include <variables.h>
 #include <helpers.h>
 
 void framebuffer_putchar(int x, int y, char c, uint32_t color) {

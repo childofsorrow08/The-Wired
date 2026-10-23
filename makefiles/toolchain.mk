@@ -18,6 +18,18 @@ include $(MAKECFG_DIR)/toolchain/as64.mk
 include $(MAKECFG_DIR)/toolchain/cc32.mk
 include $(MAKECFG_DIR)/toolchain/cc64.mk
 
+# ---------------------------------------------------------
+
+ifeq ($(ARCH),X32)
+	CC := $(CC32)
+	AS := $(AS32)
+else ifeq ($(ARCH),X64)
+	CC := $(CC64)
+	AS := $(AS64)
+endif
+
+# ---------------------------------------------------------
+
 ifeq ($(CC32),gcc)
     ifeq ($(ARCH),X32)
         $(warning [WARNING] You don't have 32-bit cross-compiler installed)

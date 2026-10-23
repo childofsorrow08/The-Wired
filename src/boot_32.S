@@ -1,4 +1,15 @@
-.code32
+/*
+ * Copyright (C) 2026 Child of Sorrow
+ *
+ * This file is part of TheWired kernel.
+ *
+ * TheWired kernel is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation, either version 3 of the License, or
+ * (at your option) any later version.
+ */
+
+ .code32
 
 .section .start, "ax", @progbits
     .global _start32
@@ -18,11 +29,7 @@
 _start32:
     cli
 
-#if defined(X32)
 	movl $stack_top, %esp
-#elif defined(X64)
-	movq $stack_top, %rsp
-#endif
 
 	// Multiboot info
     movl %ebx, multiboot_info_ptr

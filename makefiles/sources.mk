@@ -1,18 +1,23 @@
-C_SOURCES   := $(shell find $(SRC_DIR) -name "*.c")
-S_SOURCES   := $(shell find $(SRC_DIR) -name "*.S")
-ASM_SOURCES := $(shell find $(SRC_DIR) -name "*.s")
-
 ifeq ($(ARCH),X32)
-C_OBJ_FILES	:= $(patsubst $(SRC_DIR)/%.c, $(X32_OBJ_DIR)/%.o, $(C_SOURCES))
-S_OBJ_FILES	:= $(patsubst $(SRC_DIR)/%.S, $(X32_OBJ_DIR)/%.o, $(S_SOURCES))
-ASM_OBJ_FILES := $(patsubst $(SRC_DIR)/%.s, $(X32_OBJ_DIR)/%.o, $(ASM_SOURCES))
+	ARCH_SUFFIX := 32
+else ifeq ($(ARCH),X64)
+	ARCH_SUFFIX := 64
 endif
 
-ifeq ($(ARCH),X64)
-C_OBJ_FILES	:= $(patsubst $(SRC_DIR)/%.c, $(X64_OBJ_DIR)/%.o, $(C_SOURCES))
-S_OBJ_FILES	:= $(patsubst $(SRC_DIR)/%.S, $(X64_OBJ_DIR)/%.o, $(S_SOURCES))
-ASM_OBJ_FILES := $(patsubst $(SRC_DIR)/%.s, $(X64_OBJ_DIR)/%.o, $(ASM_SOURCES))
-endif
+ALL_C_SOURCES   := $(shell find $(SRC_DIR) -name "*.c")
+ALL_S_SOURCES   := $(shell find $(SRC_DIR) -name "*.S")
+ALL_ASM_SOURCES := $(shell find $(SRC_DIR) -name "*.s")
+
+select_sources = $(filter-out %_32.$(2) %_64.$(2),$(1)) \
+                 $(filter %_$(ARCH_SUFFIX).$(2),$(1))
+
+C_SOURCES   := $(call select_sources,$(ALL_C_SOURCES),c)
+S_SOURCES   := $(call select_sources,$(ALL_S_SOURCES),S)
+ASM_SOURCES := $(call select_sources,$(ALL_ASM_SOURCES),s)
+
+C_OBJ_FILES   := $(patsubst $(SRC_DIR)/%.c,$(OBJ_DIR)/%.o,$(C_SOURCES))
+S_OBJ_FILES   := $(patsubst $(SRC_DIR)/%.S,$(OBJ_DIR)/%.o,$(S_SOURCES))
+ASM_OBJ_FILES := $(patsubst $(SRC_DIR)/%.s,$(OBJ_DIR)/%.o,$(ASM_SOURCES))
 
 OBJS := \
     $(C_OBJ_FILES) \

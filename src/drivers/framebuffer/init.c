@@ -2,7 +2,6 @@
 
 #include <multiboot.h>
 #include <framebuffer.h>
-#include <variables.h>
 #include <helpers.h>
 
 void framebuffer_init(void) {
