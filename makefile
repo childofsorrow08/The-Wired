@@ -25,6 +25,7 @@ include $(MAKECFG_DIR)/rules/asm.mk
 include $(MAKECFG_DIR)/rules/ld.mk
 
 .DEFAULT_GOAL := iso
+.PHONY: all build iso disk runiso clean cleanbin cleanlocalt cleanall
 include $(MAKECFG_DIR)/targets/build.mk
 include $(MAKECFG_DIR)/targets/clean.mk
 include $(MAKECFG_DIR)/targets/disk.mk
