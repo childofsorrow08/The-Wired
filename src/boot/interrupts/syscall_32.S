@@ -5,7 +5,6 @@
     .extern idt_start
     .extern syscall_dispatch
 
-#if defined(X32)
 
 syscall_entry:
     /*
@@ -72,4 +71,3 @@ set_syscall:
 
     ret
 
-#endif

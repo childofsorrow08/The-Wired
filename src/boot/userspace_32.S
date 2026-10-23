@@ -1,6 +1,5 @@
 .code32
 
-#if defined(X32)
 
 .section .bss
     .align 16
@@ -37,4 +36,3 @@ userspace_init:
 
     iret
 
-#endif

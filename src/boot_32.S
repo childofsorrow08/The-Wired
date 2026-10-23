@@ -28,11 +28,7 @@
 _start32:
     cli
 
-#if defined(X32)
 	movl $stack_top, %esp
-#elif defined(X64)
-	movq $stack_top, %rsp
-#endif
 
 	// Multiboot info
     movl %ebx, multiboot_info_ptr

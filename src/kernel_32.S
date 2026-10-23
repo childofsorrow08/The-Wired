@@ -8,13 +8,7 @@
  * (at your option) any later version.
  */
 
-#if defined(X32)
 .code32
-#endif
-
-#if defined(X64)
-.code64
-#endif
 
 .section .text
     .global _main
