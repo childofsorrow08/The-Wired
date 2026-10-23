@@ -5,7 +5,7 @@ submodules:
 	git -C "$(ROOT_DIR)" submodule update --init --recursive --remote
 
     # Shell
-	$(MAKE) -C "$(ROOT_DIR)/submodules/shell"
+	$(MAKE) -C "$(ROOT_DIR)/submodules/shell" ARCH=$(ARCH)
 	@cp "$(ROOT_DIR)/submodules/shell/build/$(ARCH)/bin/shell.elf" \
 		"$(CUR_BIN_DIR)/bin/shell.elf"
 
