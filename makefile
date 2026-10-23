@@ -31,7 +31,7 @@ include $(MAKECFG_DIR)/targets/clean.mk
 include $(MAKECFG_DIR)/targets/disk.mk
 include $(MAKECFG_DIR)/targets/iso.mk
 include $(MAKECFG_DIR)/targets/run.mk
-all: build iso
+all: build disk iso
 
 # Ignore this, only needed for GitHub Actions
 -include $(MAKECFG_DIR)/actions/release.mk
