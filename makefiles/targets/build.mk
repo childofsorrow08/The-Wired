@@ -1,6 +1,2 @@
-ifeq ($(ARCH),X32)
-
-build: $(X32_ELF)
-	@echo "[INFO] x32 kernel built: $(X32_ELF)"
-
-endif
+build: $(KERNEL_ELF)
+	@echo "[INFO] $(ARCH) kernel built: $(KERNEL_ELF)"

@@ -1,8 +1,4 @@
-ifeq ($(ARCH),X32)
-
-$(X32_ELF): $(OBJS) $(LD_SCRIPT)
+$(ELF): $(OBJS) $(LD_SCRIPT)
 	@mkdir -p $(dir $@)
-	@echo "[LD] Linking 32-bit kernel..."
-	@$(CC32) $(LDFLAGS) -o $@ $(OBJS)
-
-endif
+	@echo "[LD] Linking $(ARCH) kernel..."
+	@$(CC) $(LDFLAGS) -o $@ $(OBJS)
