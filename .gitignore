@@ -1,6 +1,5 @@
 # repo stuff
 build
-submodules
 
 # IDE
 .cache
