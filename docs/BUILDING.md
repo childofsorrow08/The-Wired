@@ -36,7 +36,8 @@ This project has different Make targets for various tasks; you can see a list of
 
 To make it possible to compile the kernel as flexibly as possible, various compilation options will be added on an ongoing basis to help you manage the build process conveniently:
 
-- `ARCH=*` - Specifies the architecture for which the kernel should be compiled. Possible values: `X32`, `X64`
+- `ARCH=*` - Specifies the architecture for which the kernel should be compiled. Possible values: `X32`, `X64`. Standart value: `X32`
+- `BIN_TYPE=*` - Allows you to specify the type of the final `.elf` file. Possible values: `debug`, `release`. Standart value: `debug`
 
 ## 3. Nix package manager
 
