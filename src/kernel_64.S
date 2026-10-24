@@ -1,7 +1,4 @@
-.code64
-
-.section .text
-    .global _main
+#include <files/kernel_64.inc>
 
 _main:
 
