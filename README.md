@@ -29,7 +29,7 @@ dataset construction, or similar purposes.
 ### Default dependencies
 
 - Linux. I don't want to bear with Windows tools
-- GCC and GNU Assembler (AS)
+- GCC and GNU Assembler (GAS)
 - Makefiles
 
 > [!TIP]
@@ -62,19 +62,21 @@ make build ARCH=X32
 >
 > Also, if you're using NixOS or Nix package manager, [you can use the script to build in the nix-shell](docs/BUILDING.md#3-nix-package-manager).
 
+# Current state
+
+At this stage, the kernel's functionality is already quite extensive:
+
+- TODO
+
 # Release Roadmap
 
-I’d also like to share my plans for each release, starting with version 0.4 and ending with version 1.0. These are just plans, not estimated release dates, since I don’t set deadlines for myself and work at my own pace.
+I’d also like to share my plans for each release, starting with version 1.0 and ending with version 1.2. These are just plans, not estimated release dates, since I don’t set deadlines for myself and work at my own pace.
 
 | Version | Plan | Already done? |
 | :---: | :--- | :---: |
-| 0.4 | Basic support for keyboard input, for the subsequent creation of a basic shell. | ✅ |
-| 0.5 | A basic shell capable of performing minimal functions, temporarily embedded in the kernel | ✅ |
-| 0.6 | Basic file system operations, functions for creating and searching for files for testing purposes | ✅ |
-| 0.7 | The ability to run binary applications separately from the kernel | ✅ |
-| 0.8 | An API for interacting with the kernel, so that programs do not access kernel functions or low-level hardware directly, perhaps a minimal libc, perhaps expanding the number of kernel functions so that most of libc's functionality is available, and adding a directory where the header files required by the system will be copied | ✅ |
-| 0.9 | Creating several minimal shell commands that are separate from the kernel, and teaching the shell to look for them in the correct directories | ✅ |
-| 1.0 | Cosmetic code improvements, adding more useful comments, a final review of the documentation and project guidelines, refactoring poorly written sections of code, and celebrating the project’s first full-fledged release. | ➖ |
+| 1.0 | Full rewrite in Assembly, refactoring, documentation updates | ➖ |
+| 1.1 | Full X64 architecture support | ➖ |
+| 1.2 | Final ABI state, huge syscalls update | ➖ |
 
 # Docs
 
