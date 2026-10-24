@@ -1,5 +1,5 @@
-#if !defined(THEWIRED_BOOT32_INC)
-#define THEWIRED_BOOT32_INC
+#if !defined(THEWIRED_BOOT64_INC)
+#define THEWIRED_BOOT64_INC
 
 .code32
 
