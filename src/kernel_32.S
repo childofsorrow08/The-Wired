@@ -1,7 +1,4 @@
-.code32
-
-.section .text
-    .global _main
+#include <files/kernel_32.inc>
 
 _main:
 
