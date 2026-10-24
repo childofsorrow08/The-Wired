@@ -4,6 +4,6 @@
 .code64
 
 .section .text
-    .global _main
+    .global _x64_main
 
 #endif

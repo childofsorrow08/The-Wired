@@ -24,4 +24,4 @@ _start32:
 _start64:
     movabs $_stack_top, %rsp
 
-    call _main
+    call _x64_main

@@ -6,8 +6,8 @@
 .section .start, "ax", @progbits
     .global _start32
 
-    .extern _stack_top
-
-    .extern _main
+                            // From:
+    .extern _x32_stack_top  // src/boot/bss_32.S
+    .extern _x32_main       // src/kernel_32.S
 
 #endif

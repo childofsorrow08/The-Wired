@@ -11,7 +11,7 @@
 
 #include <files/kernel_32.inc>
 
-_main:
+_x32_main:
 
 .loop:
     hlt

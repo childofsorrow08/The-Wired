@@ -1,5 +1,5 @@
 #include <files/boot/paging_32.inc>
 
-_paging_init:
+_x32_paging_init:
     // placeholder
     ret

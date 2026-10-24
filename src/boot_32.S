@@ -14,6 +14,6 @@
 _start32:
     cli
 
-    movl $_stack_top, %esp
+    movl $_x32_stack_top, %esp
 
-    call _main
+    call _x32_main

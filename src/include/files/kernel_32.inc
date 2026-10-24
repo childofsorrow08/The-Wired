@@ -4,6 +4,6 @@
 .code32
 
 .section .text
-    .global _main
+    .global _x32_main
 
 #endif
